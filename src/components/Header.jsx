@@ -7,6 +7,8 @@ import {
 
 import { FiArrowUpRight } from "react-icons/fi";
 import { Navigate, NavLink } from "react-router-dom";
+import Logo from "../assets/logo/Logo.png";
+
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -17,16 +19,16 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          {/* <div className="flex items-center">
+          <div className="flex items-center">
             <img
-              src="/logo.png"
+              src={Logo}
               alt="Logo"
-              className="h-14 object-contain"
+              className="w-40 h-40 object-contain"
             />
-            <h1 className="text-2xl font-bold text-red-600">Chakrin</h1>
-          </div> */}
 
-          <div className="flex items-center gap-2 cursor-pointer">
+          </div>
+
+          {/* <div className="flex items-center gap-2 cursor-pointer">
             <div className="w-11 h-11 rounded-xl bg-gradient-to-r from-[#F04F5A] to-[#FFB300] flex items-center justify-center shadow-lg">
               <span className="text-white text-xl font-bold">C</span>
             </div>
@@ -39,7 +41,7 @@ const Header = () => {
                 Textile Solutions
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Desktop Menu */}
           {/* <nav className="hidden lg:flex items-center gap-9">
@@ -232,28 +234,32 @@ const Header = () => {
 
 
           {/* Button */}
+          {/* Button */}
           <div className="hidden lg:block">
-
-            <button onClick={() => Navigate("/contact")} className=" bg-gradient-to-r
-    from-[#F04F5A]
-    to-[#FFB300]
-    text-white
-    font-semibold
-    px-8
-    py-3
-    rounded-full
-    shadow-lg
-    hover:scale-105
-    hover:shadow-xl
-    transition-all
-    duration-300
-    flex
-    items-center
-    gap-2 cursor-pointer">
+            <NavLink
+              to="/contact"
+              className="
+      bg-gradient-to-r
+      from-[#F04F5A]
+      to-[#FFB300]
+      text-white
+      font-semibold
+      px-8
+      py-3
+      rounded-full
+      shadow-lg
+      hover:scale-105
+      hover:shadow-xl
+      transition-all
+      duration-300
+      flex
+      items-center
+      gap-2
+    "
+            >
               CONNECT
               <FiArrowUpRight size={18} />
-            </button>
-
+            </NavLink>
           </div>
 
           {/* Mobile Icon */}
@@ -270,39 +276,169 @@ const Header = () => {
 
       {/* Mobile Menu */}
 
+      {/* ================= MOBILE MENU ================= */}
+
       <div
-        className={`lg:hidden overflow-hidden duration-300 ${mobileMenu ? "max-h-[600px]" : "max-h-0"
+        className={` lg:hidden absolute left-0 right-0 top-full z-50 overflow-hidden
+    bg-white border-t border-gray-100 shadow-xl
+    transition-all duration-300 ease-in-out ${mobileMenu ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"
           }`}
       >
+        <div className="px-6 py-5 bg-white border-t border-gray-100">
 
-        <div className="px-6 py-5 bg-white border-t space-y-5">
+          <div className="flex flex-col gap-1">
 
-          <a href="/" className="block">
-            Home
-          </a>
+            {/* Home */}
+            <NavLink
+              to="/"
+              onClick={() => setMobileMenu(false)}
+              className={({ isActive }) =>
+                `block w-full px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isActive
+                  ? "bg-red-50 text-[#F04F5A]"
+                  : "text-gray-800 hover:bg-gray-50 hover:text-[#F04F5A]"
+                }`
+              }
+            >
+              Home
+            </NavLink>
 
-          <a href="/about-us" className="block">
-            About Us
-          </a>
 
-          <a href="/business" className="block">
-            Businesses
-          </a>
+            {/* About */}
+            <NavLink
+              to="/about-us"
+              onClick={() => setMobileMenu(false)}
+              className={({ isActive }) =>
+                `block w-full px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isActive
+                  ? "bg-red-50 text-[#F04F5A]"
+                  : "text-gray-800 hover:bg-gray-50 hover:text-[#F04F5A]"
+                }`
+              }
+            >
+              About
+            </NavLink>
 
-          <a href="/media" className="block">
-            Media
-          </a>
 
-          <a href="/investors" className="block">
-            Investors
-          </a>
+            {/* Blog */}
+            <NavLink
+              to="/blog"
+              onClick={() => setMobileMenu(false)}
+              className={({ isActive }) =>
+                `block w-full px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isActive
+                  ? "bg-red-50 text-[#F04F5A]"
+                  : "text-gray-800 hover:bg-gray-50 hover:text-[#F04F5A]"
+                }`
+              }
+            >
+              Blog
+            </NavLink>
 
-          <button onClick={() => Navigate("/contact")} className="w-full bg-gradient-to-r from-[#F04F5A] to-[#FFB300] text-white py-3 rounded-full">
-            CONNECT
-          </button>
+
+            {/* ================= BUSINESSES ================= */}
+
+            <div className="w-full">
+
+              <button
+                type="button"
+                className="w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium text-gray-800 hover:bg-gray-50  transition-all duration-300"
+              >
+                <span>Businesses</span>
+
+                <FiChevronDown className="text-lg" />
+              </button>
+
+
+              {/* Business Items */}
+
+              <div className="mt-1 ml-3 border-l-2 border-gray-100 pl-3">
+
+                <NavLink
+                  to="/businesses/digital-printing"
+                  onClick={() => setMobileMenu(false)}
+                  className={({ isActive }) =>
+                    `block w-full px-4 py-3 rounded-lg text-sm transition-all duration-300 ${isActive
+                      ? "bg-red-50 text-[#F04F5A] font-medium"
+                      : "text-gray-600 hover:bg-gray-50 hover:text-[#F04F5A]"
+                    }`
+                  }
+                >
+                  Digital Printing
+                </NavLink>
+
+
+                <NavLink
+                  to="/businesses/textile-machines"
+                  onClick={() => setMobileMenu(false)}
+                  className={({ isActive }) =>
+                    `block w-full px-4 py-3 rounded-lg text-sm transition-all duration-300 ${isActive
+                      ? "bg-red-50 text-[#F04F5A] font-medium"
+                      : "text-gray-600 hover:bg-gray-50 hover:text-[#F04F5A]"
+                    }`
+                  }
+                >
+                  Textile Machines
+                </NavLink>
+
+
+                <NavLink
+                  to="/businesses/spare-parts"
+                  onClick={() => setMobileMenu(false)}
+                  className={({ isActive }) =>
+                    `block w-full px-4 py-3 rounded-lg text-sm transition-all duration-300 ${isActive
+                      ? "bg-red-50 text-[#F04F5A] font-medium"
+                      : "text-gray-600 hover:bg-gray-50 hover:text-[#F04F5A]"
+                    }`
+                  }
+                >
+                  Spare Parts
+                </NavLink>
+
+              </div>
+
+            </div>
+
+
+            {/* Gallery */}
+            <NavLink
+              to="/gallery"
+              onClick={() => setMobileMenu(false)}
+              className={({ isActive }) =>
+                `block w-full px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isActive
+                  ? "bg-red-50 text-[#F04F5A]"
+                  : "text-gray-800 hover:bg-gray-50 hover:text-[#F04F5A]"
+                }`
+              }
+            >
+              Gallery
+            </NavLink>
+
+
+            {/* Contact */}
+            <NavLink
+              to="/contact"
+              onClick={() => setMobileMenu(false)}
+              className={({ isActive }) =>
+                `block w-full px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isActive
+                  ? "bg-red-50 text-[#F04F5A]"
+                  : "text-gray-800 hover:bg-gray-50 hover:text-[#F04F5A]"
+                }`
+              }
+            >
+              Contact
+            </NavLink>
+
+
+            {/* Connect Button */}
+            <NavLink
+              to="/contact"
+              onClick={() => setMobileMenu(false)}
+              className="mt-3 w-full flex items-center justify-center bg-gradient-to-r from-[#F04F5A] to-[#FFB300] text-white py-3.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              CONNECT
+            </NavLink>
+
+          </div>
 
         </div>
-
       </div>
 
     </header>
