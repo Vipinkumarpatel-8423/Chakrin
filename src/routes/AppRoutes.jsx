@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
-import Home from "../pages/Home/home";
+import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Blog from "../pages/Blog/Blog";
 import BlogDetails from "../pages/Blog/BlogDetails";
