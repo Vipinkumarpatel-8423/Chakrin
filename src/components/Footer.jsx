@@ -246,7 +246,7 @@ const Footer = () => {
 
           <p className="text-gray-500">
             Designed & Developed by{" "}
-            <a href="https://ymorinnovation.com/" target="_blank" rel="noreferrer" className="font-semibold text-[#FFB300] hover:text-[#F04F5A] transition duration-300">Ymor</a>
+            <a href="https://ymorinnovation.com/" target="_blank" rel="noreferrer" className="font-semibold text-[#FFB300] hover:text-[#F04F5A] transition duration-300">Ymor Innovation</a>
           </p>
 
         </div>

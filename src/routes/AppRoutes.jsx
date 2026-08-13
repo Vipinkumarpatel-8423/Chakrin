@@ -9,7 +9,7 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Blog from "../pages/Blog/Blog";
 import BlogDetails from "../pages/Blog/BlogDetails";
-import DigitalPrinting from "../pages/Businesses/DigitalPrnting";
+import DigitalPrinting from "../pages/Businesses/DigitalPrinting";
 import TextileMachine from "../pages/Businesses/TextileMachine";
 import SpareParts from "../pages/Businesses/SpareParts";
 import Gallery from "../pages/Gallery/Gallery";

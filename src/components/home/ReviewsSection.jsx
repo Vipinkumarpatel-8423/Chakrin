@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 const ReviewsSection = () => {
   return (
     // <section className="pb-24 bg-[#F7F8FC] bg-gradient-to-b from-white to-gray-50">
-    <section className="py-16 md:py-20 lg:pb-24 bg-[#F7F8FC] bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="py-8 md:py-10 lg:pb-24 bg-[#F7F8FC] bg-gradient-to-b from-white to-gray-50 overflow-hidden">
 
       {/* <div className="max-w-7xl mx-auto px-5"> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

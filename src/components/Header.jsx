@@ -19,14 +19,17 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <div className="flex items-center">
+          <a
+            href="/"
+            className="flex items-center">
             <img
+
               src={Logo}
               alt="Logo"
               className="w-40 h-40 object-contain"
             />
 
-          </div>
+          </a>
 
           {/* <div className="flex items-center gap-2 cursor-pointer">
             <div className="w-11 h-11 rounded-xl bg-gradient-to-r from-[#F04F5A] to-[#FFB300] flex items-center justify-center shadow-lg">

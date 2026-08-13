@@ -32,7 +32,7 @@ import businessData from "../../data/business/BusinessData";
 
 const BusinessSection = () => {
   return (
-    <section className="py-24 bg-[#fafafa]">
+    <section className="pt-10 bg-[#fafafa]">
 
       <div className="max-w-7xl mx-auto px-5">
 
