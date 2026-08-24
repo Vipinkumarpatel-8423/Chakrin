@@ -9,9 +9,15 @@ import { directors } from "../../data/directors";
 
 const TeamSection = () => {
   return (
-    <section className="pb-24 bg-gradient-to-b from-white to-gray-100">
+    <section className="relative overflow-hidden pb-24 bg-chakrin-secondary-light">
 
-      <div className="max-w-7xl mx-auto px-5">
+      {/* Background Glow */}
+
+      <div className="pointer-events-none absolute -top-32 -left-32 h-80 w-80 rounded-full bg-chakrin-primary/10 blur-3xl" />
+
+      <div className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-chakrin-secondary/15 blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Heading */}
 
@@ -19,19 +25,41 @@ const TeamSection = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: .8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12 lg:mb-16"
         >
 
-          <span className="uppercase tracking-[5px] text-orange-500 text-sm font-semibold">
+          <span className="
+            uppercase
+            tracking-[5px]
+            text-chakrin-primary
+            text-sm
+            font-semibold
+          ">
             Leadership
           </span>
 
-          <h2 className="mt-4 text-4xl lg:text-5xl font-bold">
+          <h2 className="
+            mt-4
+            text-3xl
+            sm:text-4xl
+            lg:text-5xl
+            font-bold
+            text-chakrin-heading
+            leading-tight
+          ">
             Meet Our Leadership Team
           </h2>
 
-          <p className="mt-5 max-w-2xl mx-auto text-gray-500">
+          <p className="
+            mt-5
+            max-w-2xl
+            mx-auto
+            text-chakrin-text
+            leading-7
+            text-sm
+            sm:text-base
+          ">
             Experienced leaders driving innovation, quality and excellence
             in textile printing technology.
           </p>
@@ -40,7 +68,14 @@ const TeamSection = () => {
 
         {/* Cards */}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          xl:grid-cols-4
+          gap-6
+          lg:gap-8
+        ">
 
           {directors.map((item, index) => (
 
@@ -56,12 +91,26 @@ const TeamSection = () => {
               }}
               viewport={{ once: true }}
               transition={{
-                delay: index * .15,
+                delay: index * 0.15,
+                duration: 0.6,
               }}
               whileHover={{
                 y: -12,
               }}
-              className="group bg-white rounded-3xl shadow-xl overflow-hidden  hover:border-orange-400 duration-500"
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-3xl
+                bg-white
+                border
+                border-chakrin-border
+                shadow-[0_10px_35px_rgba(166,61,130,0.07)]
+                hover:border-chakrin-primary/40
+                hover:shadow-[0_20px_45px_rgba(166,61,130,0.14)]
+                transition-all
+                duration-500
+              "
             >
 
               {/* Image */}
@@ -71,26 +120,113 @@ const TeamSection = () => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-[340px] object-cover group-hover:scale-110 duration-700"
+                  className="
+                    w-full
+                    h-[320px]
+                    sm:h-[340px]
+                    object-cover
+                    group-hover:scale-110
+                    duration-700
+                  "
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 duration-500" />
+                {/* Image Overlay */}
+
+                <div className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-chakrin-primary/80
+                  via-transparent
+                  to-transparent
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-all
+                  duration-500
+                " />
 
                 {/* Social */}
 
-                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-3 opacity-0 group-hover:opacity-100 duration-500">
+                <div className="
+                  absolute
+                  bottom-5
+                  left-1/2
+                  -translate-x-1/2
+                  flex
+                  gap-3
+                  opacity-0
+                  translate-y-4
+                  group-hover:opacity-100
+                  group-hover:translate-y-0
+                  transition-all
+                  duration-500
+                ">
 
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-orange-500 hover:text-white duration-300 cursor-pointer">
+                  {/* Facebook */}
+
+                  <a
+                    href="#"
+                    className="
+                      w-10
+                      h-10
+                      rounded-full
+                      bg-white
+                      text-chakrin-primary
+                      flex
+                      items-center
+                      justify-center
+                      hover:bg-chakrin-primary
+                      hover:text-white
+                      transition-all
+                      duration-300
+                    "
+                  >
                     <FaFacebookF />
-                  </div>
+                  </a>
 
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-orange-500 hover:text-white duration-300 cursor-pointer">
+                  {/* Instagram */}
+
+                  <a
+                    href="#"
+                    className="
+                      w-10
+                      h-10
+                      rounded-full
+                      bg-white
+                      text-chakrin-primary
+                      flex
+                      items-center
+                      justify-center
+                      hover:bg-chakrin-primary
+                      hover:text-white
+                      transition-all
+                      duration-300
+                    "
+                  >
                     <FaInstagram />
-                  </div>
+                  </a>
 
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-orange-500 hover:text-white duration-300 cursor-pointer">
+                  {/* LinkedIn */}
+
+                  <a
+                    href="#"
+                    className="
+                      w-10
+                      h-10
+                      rounded-full
+                      bg-white
+                      text-chakrin-primary
+                      flex
+                      items-center
+                      justify-center
+                      hover:bg-chakrin-primary
+                      hover:text-white
+                      transition-all
+                      duration-300
+                    "
+                  >
                     <FaLinkedinIn />
-                  </div>
+                  </a>
 
                 </div>
 
@@ -98,23 +234,35 @@ const TeamSection = () => {
 
               {/* Content */}
 
-              <div className="p-7 text-center">
+              <div className="p-6 sm:p-7 text-center">
 
-                <h3 className="text-2xl font-bold">
+                <h3 className="
+                  text-xl
+                  sm:text-2xl
+                  font-bold
+                  text-chakrin-heading
+                  group-hover:text-chakrin-primary
+                  transition-colors
+                  duration-300
+                ">
                   {item.name}
                 </h3>
 
-                <p className="mt-2 inline-block rounded-full bg-orange-100 text-orange-600 px-4 py-1 text-sm font-medium">
+                <p className="
+                  mt-3
+                  inline-block
+                  rounded-full
+                  bg-chakrin-secondary-light
+                  text-chakrin-primary-dark
+                  border
+                  border-chakrin-border
+                  px-4
+                  py-1
+                  text-sm
+                  font-medium
+                ">
                   {item.role}
                 </p>
-
-                {/* <p className="mt-5 text-gray-500 leading-7">
-                  {item.desc}
-                </p> */}
-
-                {/* <button className="mt-7 font-semibold text-orange-500 hover:text-red-500 duration-300">
-                  View Profile →
-                </button> */}
 
               </div>
 

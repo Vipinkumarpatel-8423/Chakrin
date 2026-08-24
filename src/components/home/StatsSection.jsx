@@ -30,9 +30,49 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section
+      className="
+        relative
+        py-16
+        lg:py-20
+        bg-chakrin-secondary-light
+        overflow-hidden
+        select-none
+      "
+    >
 
-      <div className="max-w-7xl mx-auto px-5">
+      {/* Background Glow */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -top-32
+          -left-32
+          h-80
+          w-80
+          rounded-full
+          bg-chakrin-primary/10
+          blur-3xl
+        "
+      />
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -bottom-32
+          -right-32
+          h-80
+          w-80
+          rounded-full
+          bg-chakrin-secondary/10
+          blur-3xl
+        "
+      />
+
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Animated Illustration */}
 
@@ -41,7 +81,12 @@ const StatsSection = () => {
           <motion.img
             src={illustration}
             alt="Textile Illustration"
-            className="max-w-full md:w-[700px]"
+            className="
+              w-full
+              max-w-[650px]
+              md:w-[700px]
+              object-contain
+            "
             animate={{
               x: [-80, 80, -80],
             }}
@@ -54,44 +99,139 @@ const StatsSection = () => {
 
         </div>
 
+
         {/* Stats */}
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-4
+            gap-6
+            lg:gap-8
+          "
+        >
 
           {stats.map((item, index) => (
 
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
               transition={{
                 delay: index * 0.2,
-                duration: .7,
+                duration: 0.7,
               }}
               whileHover={{
                 y: -10,
               }}
-              className="group"
+              className="
+                group
+                relative
+                rounded-3xl
+                bg-white
+                border
+                border-chakrin-border
+                p-7
+                lg:p-8
+                shadow-lg
+                hover:shadow-xl
+                transition-all
+                duration-500
+              "
             >
 
-              <h2 className="text-5xl font-extrabold text-gray-900">
-                {/* {item.number} */}
+              {/* Top Accent */}
+
+              <div
+                className="
+                  absolute
+                  top-0
+                  left-8
+                  right-8
+                  h-[3px]
+                  rounded-full
+                  bg-gradient-to-r
+                  from-chakrin-primary-dark
+                  via-chakrin-primary
+                  to-chakrin-secondary
+                  opacity-70
+                  group-hover:opacity-100
+                  transition
+                "
+              />
+
+
+              {/* Number */}
+
+              <h2
+                className="
+                  text-4xl
+                  sm:text-5xl
+                  font-extrabold
+                  tracking-tight
+                  text-chakrin-primary-dark
+                "
+              >
                 <Counter
                   value={item.number}
                   suffix={item.suffix}
-                // duration={2.5}
                 />
-
               </h2>
 
-              <h4 className="mt-4 font-semibold text-lg">
+
+              {/* Title */}
+
+              <h4
+                className="
+                  mt-4
+                  font-semibold
+                  text-lg
+                  text-chakrin-heading
+                "
+              >
                 {item.title}
               </h4>
 
-              <div className="mt-4 h-[2px] w-20 bg-gradient-to-r from-[#F04F5A] to-[#FFB300] group-hover:w-full duration-500"></div>
 
-              <p className="mt-5 text-gray-500 leading-7">
+              {/* Animated Line */}
+
+              <div
+                className="
+                  mt-4
+                  h-[2px]
+                  w-16
+                  rounded-full
+                  bg-gradient-to-r
+                  from-chakrin-primary-dark
+                  to-chakrin-secondary
+                  group-hover:w-full
+                  duration-500
+                "
+              />
+
+
+              {/* Description */}
+
+              <p
+                className="
+                  mt-5
+                  text-sm
+                  sm:text-base
+                  text-chakrin-text
+                  leading-7
+                "
+              >
                 {item.desc}
               </p>
 

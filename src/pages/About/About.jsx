@@ -57,6 +57,12 @@ const About = () => {
 
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/40"></div>
 
+        {/* Theme Glow */}
+
+        <div className="pointer-events-none absolute -left-40 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-chakrin-primary/20 blur-3xl"></div>
+
+        <div className="pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-chakrin-secondary/15 blur-3xl"></div>
+
         {/* Content */}
 
         <div className="relative z-10">
@@ -65,65 +71,61 @@ const About = () => {
 
             <div className="min-h-[340px] md:min-h-[420px] lg:min-h-[320px] flex items-center">
 
-              <div className="max-w-3xl">
+              <div className="max-w-3xl select-none">
+
+                {/* Label */}
 
                 <motion.span
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: .6 }}
-                  className="inline-block rounded-full border border-orange-400/40 bg-white/10 backdrop-blur-md px-5 py-2 text-sm tracking-[4px] uppercase text-orange-300"
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="
+              inline-block
+              rounded-full
+              border
+              border-chakrin-secondary/40
+              bg-chakrin-primary/10
+              backdrop-blur-md
+              px-5
+              py-2
+              text-sm
+              tracking-[4px]
+              uppercase
+              text-chakrin-secondary
+            "
                 >
                   About Chakrin
                 </motion.span>
-
-                {/* <motion.h1
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: .2, duration: .8 }}
-                className="mt-6 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold text-white leading-tight"
-              >
-                Transforming
-                <br />
-
-                Textile Innovation
-
-                <span className="block bg-gradient-to-r from-[#F04F5A] via-[#FF7A3D] to-[#FFB300] bg-clip-text text-transparent">
-                  Into Excellence
-                </span>
-
-              </motion.h1> */}
-
-                {/* <motion.p
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: .4 }}
-                className="mt-6 max-w-2xl text-gray-300 text-base md:text-lg leading-8"
-              >
-                Chakrin Digital Textiles specializes in advanced textile
-                printing technology, innovative machinery and precision-driven
-                manufacturing solutions, delivering world-class quality for the
-                modern textile industry.
-              </motion.p> */}
 
                 {/* Breadcrumb */}
 
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ delay: .6 }}
+                  transition={{ delay: 0.6 }}
+                  viewport={{ once: true }}
                   className="mt-8 flex flex-wrap items-center gap-3 text-sm"
                 >
+
                   <Link
                     to="/"
-                    className="flex items-center gap-2 text-white hover:text-orange-400 duration-300"
+                    className="
+                flex
+                items-center
+                gap-2
+                text-white
+                hover:text-chakrin-secondary
+                duration-300
+              "
                   >
                     <FiHome />
                     Home
                   </Link>
 
-                  <FiChevronRight className="text-orange-400" />
+                  <FiChevronRight className="text-chakrin-secondary" />
 
-                  <span className="text-orange-400 font-semibold">
+                  <span className="text-chakrin-secondary font-semibold select-none">
                     About Us
                   </span>
 
@@ -142,36 +144,71 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 70 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .8 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="relative z-20 max-w-6xl mx-auto px-5"
+          className="relative z-20 max-w-6xl mx-auto px-5 select-none"
         >
 
           <div className="lg:-mt-16 -mt-10">
 
-            <div className="rounded-3xl border border-white/20 bg-white/10 backdrop-blur-2xl shadow-2xl">
+            <div
+              className="
+          rounded-3xl
+          border
+          border-chakrin-secondary/30
+          bg-chakrin-primary/10
+          backdrop-blur-2xl
+          shadow-2xl
+        "
+            >
 
               <div className="grid grid-cols-1 sm:grid-cols-3">
 
                 {stats.map((item, index) => (
 
-                  <div
+                  <motion.div
                     key={index}
-                    className={`py-8 px-6 text-center ${index !== stats.length - 1
-                      ? "sm:border-r border-white/20"
-                      : ""
-                      }`}
+                    whileHover={{
+                      backgroundColor: "rgba(166, 61, 130, 0.12)",
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className={`
+                py-8
+                px-6
+                text-center
+                ${index !== stats.length - 1
+                        ? "sm:border-r border-chakrin-secondary/20"
+                        : ""
+                      }
+              `}
                   >
-                    <h2 className="text-4xl lg:text-5xl font-bold text-white">
-                      {/* {item.number} */}
-                      <Counter value={parseInt(item.number)} suffix={item.suffix} />
+
+                    {/* Number */}
+
+                    <h2 className="
+                text-4xl
+                lg:text-5xl
+                font-bold
+                text-white
+              ">
+                      <Counter
+                        value={parseInt(item.number)}
+                        suffix={item.suffix}
+                      />
                     </h2>
 
-                    <p className="mt-3 text-gray-200">
+                    {/* Title */}
+
+                    <p className="
+                mt-3
+                text-white/80
+                text-sm
+                sm:text-base
+              ">
                       {item.title}
                     </p>
 
-                  </div>
+                  </motion.div>
 
                 ))}
 
@@ -182,7 +219,6 @@ const About = () => {
           </div>
 
         </motion.div>
-
 
       </section>
       <AboutSection />

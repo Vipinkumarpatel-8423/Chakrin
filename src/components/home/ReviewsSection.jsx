@@ -10,38 +10,43 @@ import { motion } from "framer-motion";
 
 const ReviewsSection = () => {
   return (
-    // <section className="pb-24 bg-[#F7F8FC] bg-gradient-to-b from-white to-gray-50">
-    <section className="py-8 md:py-10 lg:pb-24 bg-[#F7F8FC] bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="relative overflow-hidden bg-chakrin-secondary-light py-8 md:py-10 lg:pb-24">
 
-      {/* <div className="max-w-7xl mx-auto px-5"> */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Background Glow */}
+
+      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-chakrin-primary/10 blur-3xl" />
+
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-chakrin-secondary/10 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         {/* Heading */}
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10 md:mb-14 lg:mb-16"
+          transition={{ duration: 0.7 }}
+          className="mb-10 text-center md:mb-14 lg:mb-16"
         >
-          <span className="uppercase tracking-[5px] text-orange-500 text-sm font-semibold">
+          <span className="text-sm font-semibold uppercase tracking-[5px] text-chakrin-primary">
             Testimonials
           </span>
 
-          {/* <h2 className="mt-4 text-4xl lg:text-5xl font-bold"> */}
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+          <h2 className="mt-4 text-3xl font-bold leading-tight text-chakrin-heading sm:text-4xl lg:text-5xl">
             What Our Clients Say
           </h2>
 
-          {/* <p className="mt-5 text-gray-500 max-w-2xl mx-auto"> */}
-          <p className="mt-5 text-sm sm:text-base text-gray-500 max-w-2xl mx-auto leading-7 px-2">
+          <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-7 text-chakrin-text sm:text-base">
             Trusted by textile manufacturers across India for quality,
             innovation and exceptional customer service.
           </p>
-
         </motion.div>
 
-        {/* <div className="grid lg:grid-cols-4 gap-10 items-start"> */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10 items-start">
+
+        {/* Main Content */}
+
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-4 lg:gap-10">
 
           {/* Google Rating */}
 
@@ -49,19 +54,37 @@ const ReviewsSection = () => {
             initial={{ x: -60, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="rounded-3xl bg-white shadow-xl border p-6 sm:p-8 w-full max-w-md mx-auto lg:max-w-none"
+            transition={{ duration: 0.7 }}
+            className="
+              mx-auto
+              w-full
+              max-w-md
+              rounded-3xl
+              border
+              border-chakrin-border
+              bg-white
+              p-6
+              shadow-[0_15px_40px_rgba(166,61,130,0.08)]
+              sm:p-8
+              lg:max-w-none
+            "
           >
+
+            {/* Google Header */}
+
             <div className="flex items-center gap-3">
 
-              <FaGoogle className="text-4xl text-blue-500" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-chakrin-secondary-light">
+                <FaGoogle className="text-3xl text-chakrin-primary" />
+              </div>
 
               <div>
 
-                <h3 className="font-bold text-xl">
+                <h3 className="text-xl font-bold text-chakrin-heading">
                   Chakrin Digital
                 </h3>
 
-                <p className="text-gray-500">
+                <p className="text-sm text-chakrin-text">
                   Textile Solutions
                 </p>
 
@@ -69,7 +92,10 @@ const ReviewsSection = () => {
 
             </div>
 
-            <div className="flex mt-6 text-yellow-400 gap-1">
+
+            {/* Stars */}
+
+            <div className="mt-6 flex gap-1 text-chakrin-secondary">
 
               {[...Array(5)].map((_, i) => (
                 <FaStar key={i} />
@@ -77,46 +103,58 @@ const ReviewsSection = () => {
 
             </div>
 
-            {/* <h2 className="text-5xl font-bold mt-5"> */}
-            <h2 className="text-4xl sm:text-5xl font-bold mt-5">
+
+            {/* Rating */}
+
+            <h2 className="mt-5 text-4xl font-extrabold text-chakrin-heading sm:text-5xl">
               4.9
             </h2>
 
-            <p className="text-gray-500 mt-2">
+            <p className="mt-2 text-sm text-chakrin-text">
               Based on 250+ Reviews
             </p>
 
-            <button className="mt-8 w-full rounded-full bg-gradient-to-r from-[#F04F5A] to-[#FFB300] py-3 text-white font-semibold">
+
+            {/* Review Button */}
+
+            <button
+              className="
+                mt-8
+                w-full
+                rounded-full
+                bg-gradient-to-r
+                from-chakrin-primary
+                to-chakrin-secondary
+                py-3
+                font-semibold
+                text-white
+                shadow-lg
+                shadow-chakrin-primary/20
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-xl
+                hover:shadow-chakrin-primary/25
+              "
+            >
               Write Review
             </button>
 
           </motion.div>
 
-          {/* Reviews */}
 
-          {/* <div className="lg:col-span-3"> */}
-          <div className="lg:col-span-3 w-full overflow-hidden">
+          {/* Reviews Slider */}
+
+          <div className="w-full overflow-hidden lg:col-span-3">
 
             <Swiper
               modules={[Autoplay]}
               autoplay={{
                 delay: 2500,
+                disableOnInteraction: false,
               }}
               loop
               spaceBetween={25}
-
-              // breakpoints={{
-              //   0: {
-              //     slidesPerView: 1,
-              //   },
-              //   768: {
-              //     slidesPerView: 2,
-              //   },
-              //   1200: {
-              //     slidesPerView: 3,
-              //   },
-              // }}
-
               breakpoints={{
                 0: {
                   slidesPerView: 1,
@@ -149,10 +187,31 @@ const ReviewsSection = () => {
                     whileHover={{
                       y: -8,
                     }}
-                    className="rounded-3xl bg-white shadow-xl p-6 sm:p-8 h-full min-h-[280px] flex flex-col justify-between"
+                    transition={{
+                      duration: 0.3,
+                    }}
+                    className="
+                      flex
+                      h-full
+                      min-h-[280px]
+                      flex-col
+                      justify-between
+                      rounded-3xl
+                      border
+                      border-chakrin-border
+                      bg-white
+                      p-6
+                      shadow-[0_15px_40px_rgba(166,61,130,0.07)]
+                      transition-shadow
+                      duration-300
+                      hover:shadow-[0_20px_45px_rgba(166,61,130,0.13)]
+                      sm:p-8
+                    "
                   >
 
-                    <div className="flex text-yellow-400 mb-5">
+                    {/* Stars */}
+
+                    <div className="mb-5 flex gap-1 text-chakrin-secondary">
 
                       {[...Array(item.rating)].map((_, i) => (
                         <FaStar key={i} />
@@ -160,25 +219,50 @@ const ReviewsSection = () => {
 
                     </div>
 
-                    <p className="text-gray-600 leading-7 italic text-sm sm:text-base">
+
+                    {/* Review */}
+
+                    <p className="text-sm leading-7 text-chakrin-text italic sm:text-base">
                       "{item.review}"
                     </p>
 
-                    <div className="flex items-center gap-4 mt-8">
 
-                      <img
-                        src={item.image}
-                        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover flex-shrink-0"
-                        alt=""
-                      />
+                    {/* Client */}
+
+                    <div className="mt-8 flex items-center gap-4">
+
+                      <div className="relative">
+
+                        <img
+                          src={item.image}
+                          className="
+                            h-12
+                            w-12
+                            flex-shrink-0
+                            rounded-full
+                            border-2
+                            border-chakrin-border
+                            object-cover
+                            sm:h-14
+                            sm:w-14
+                          "
+                          alt={item.name}
+                        />
+
+                        {/* Small Accent */}
+
+                        <span className="absolute -bottom-1 -right-1 h-3 w-3 rounded-full bg-chakrin-secondary ring-2 ring-white" />
+
+                      </div>
+
 
                       <div>
 
-                        <h4 className="font-bold text-sm sm:text-base">
+                        <h4 className="text-sm font-bold text-chakrin-heading sm:text-base">
                           {item.name}
                         </h4>
 
-                        <p className="text-xs sm:text-sm text-gray-500">
+                        <p className="text-xs text-chakrin-text sm:text-sm">
                           {item.company}
                         </p>
 
