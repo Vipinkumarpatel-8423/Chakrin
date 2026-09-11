@@ -3,7 +3,6 @@ import {
   FiMapPin,
   FiPhone,
   FiMail,
-  FiArrowUpRight,
 } from "react-icons/fi";
 
 import Logo from "../assets/logo/Logo.png";
@@ -243,7 +242,7 @@ const Footer = () => {
 
               {/* Blog */}
 
-              <li>
+              {/* <li>
                 <Link
                   to="/blog"
                   className="
@@ -272,12 +271,12 @@ const Footer = () => {
                   Blog
 
                 </Link>
-              </li>
+              </li> */}
 
 
               {/* Gallery */}
 
-              <li>
+              {/* <li>
                 <Link
                   to="/gallery"
                   className="
@@ -306,7 +305,7 @@ const Footer = () => {
                   Gallery
 
                 </Link>
-              </li>
+              </li> */}
 
 
               {/* Contact */}
@@ -471,12 +470,11 @@ const Footer = () => {
                   </h5>
 
                   <p className="mt-1 text-white/60 leading-7">
-                    Chakrin Digital Textiles
+                    VPO Palri, Tehsil Israna
                     <br />
-                    Tehsil Israna,
-                    VPO Palri,
+                    Panipat, Haryana - 132145 
                     <br />
-                    Haryana - 132145
+                    Located 90 KMs from IGI Airport Delhi
                   </p>
 
                 </div>

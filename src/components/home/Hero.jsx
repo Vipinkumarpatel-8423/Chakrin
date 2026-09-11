@@ -2,13 +2,12 @@ import { FiArrowRight } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import HeroBg from "../../assets/h1_slide-1.jpg";
+import HeroBg from "../../assets/hero banner.png";
 
 const Hero = () => {
   const navigate = useNavigate();
   return (
     <section className="relative min-h-screen overflow-hidden">
-
       {/* Background Image */}
       <img
         src={HeroBg}
@@ -17,10 +16,11 @@ const Hero = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#160D17]/75"></div>
-
+      {/* <div className="absolute inset-0 bg-[#160D17]/75"></div> */}
+<div className="absolute inset-0 bg-gradient-to-r from-[#160D17]/75 via-[#160D17]/50 to-transparent"></div>
       {/* Chakrin Pink / Magenta Glow */}
-      <div className=" absolute
+      <div
+        className=" absolute
       -left-40
       top-1/2
       h-[450px]
@@ -28,7 +28,8 @@ const Hero = () => {
       -translate-y-1/2
       rounded-full
       bg-chakrin-primary/20
-      blur-[120px]"></div>
+      blur-[120px]"
+      ></div>
 
       {/* Soft Pink Glow */}
       {/* <div
@@ -45,11 +46,8 @@ const Hero = () => {
       ></div> */}
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-
         <div className="min-h-screen flex items-center">
-
           <div className="max-w-3xl">
-
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -61,32 +59,37 @@ const Hero = () => {
             font-extrabold
             leading-[1.05]
             tracking-tight
-            text-white">
+            text-white"
+            >
               World Class
               <br />
               Textile
-              <span className="text-transparent bg-clip-text bg-gradient-to-r
+              <span
+                className="text-transparent bg-clip-text bg-gradient-to-r
     from-chakrin-primary
-    to-chakrin-secondary">
+    to-chakrin-secondary"
+              >
                 {" "}
                 Printing
               </span>
             </motion.h1>
 
-            <p className="mt-6
+            <p
+              className="mt-6
             max-w-xl
             text-base
             sm:text-lg
             leading-7
             sm:leading-8
-            text-gray-300">
+            text-gray-300"
+            >
               Delivering advanced textile printing machines with unmatched
               quality, speed and precision for industries worldwide.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-5">
-
-              <button className=" rounded-full
+              <button
+                className=" rounded-full
               bg-gradient-to-r
               from-chakrin-primary
               to-chakrin-secondary
@@ -103,7 +106,8 @@ const Hero = () => {
               hover:scale-105
               hover:shadow-2xl
               hover:shadow-chakrin-primary/30
-              cursor-pointer">
+              cursor-pointer"
+              >
                 Explore Products
               </button>
 
@@ -130,17 +134,14 @@ const Hero = () => {
               hover:border-chakrin-primary
               hover:shadow-lg
               hover:shadow-chakrin-primary/20
-              cursor-pointer">
+              cursor-pointer"
+              >
                 Contact Us
                 <FiArrowRight />
               </button>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
 
       {/* Floating Card */}
@@ -160,7 +161,6 @@ const Hero = () => {
         </div>
 
       </div> */}
-
     </section>
   );
 };

@@ -73,7 +73,7 @@ const ContactHero = () => {
 
             <Link
               to="/"
-              className="flex items-center gap-2 text-white hover:text-orange-400 duration-300"
+              className="flex items-center gap-2 text-white hover:text-chakrin-primary duration-300"
             >
               <FiHome />
               Home
@@ -82,10 +82,10 @@ const ContactHero = () => {
 
             <FiChevronRight
               size={14}
-              className="text-orange-400"
+              className="text-chakrin-primary"
             />
 
-            <span className="text-orange-400 font-semibold">
+            <span className="text-chakrin-primary font-semibold">
               Contact
             </span>
 

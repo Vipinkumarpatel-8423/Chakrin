@@ -1,199 +1,76 @@
+import { Link } from "react-router-dom";
 import aboutImg from "../../assets/about-1.jpg";
 import machineImg from "../../assets/about-2.jpg";
 
-// import {
-//   FiCheckCircle,
-//   FiArrowUpRight,
-//   FiMapPin,
-// } from "react-icons/fi";
-
-// const AboutSection = () => {
-//   return (
-//     <section className="bg-white py-20 lg:py-28">
-//       <div className="max-w-7xl mx-auto px-5 lg:px-8">
-
-//         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-//           {/* LEFT SIDE */}
-
-//           <div className="relative">
-
-//             <img
-//               src={aboutImg}
-//               alt="Factory"
-//               className="w-full h-[520px] object-cover rounded-[35px]"
-//             />
-
-//             {/* Floating Image */}
-
-//             <div className="hidden md:block absolute -bottom-12 right-0 w-60">
-
-//               <img
-//                 src={machineImg}
-//                 alt="Machine"
-//                 className="rounded-3xl shadow-2xl border-8 border-white"
-//               />
-
-//             </div>
-
-//           </div>
-
-//           {/* RIGHT SIDE */}
-
-//           <div>
-
-//             <span className="uppercase tracking-[4px] text-sm font-semibold text-[#F59E0B]">
-//               About Chakrin
-//             </span>
-
-//             <h2 className="mt-5 text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
-//               Innovative Digital Textile
-//               <span className="text-[#F04F5A]">
-//                 {" "}Printing Solutions
-//               </span>
-//             </h2>
-
-//             <p className="mt-6 text-gray-600 leading-8">
-//               Chakrin Digital Textiles is committed to delivering premium
-//               digital textile printing solutions with advanced technology,
-//               precision manufacturing, and reliable production standards.
-//               We focus on quality, innovation, and customer satisfaction
-//               to meet the growing demands of the textile industry.
-//             </p>
-
-//             {/* Address */}
-
-//             <div className="mt-6 flex items-start gap-3">
-
-//               <div className="w-11 h-11 rounded-full bg-orange-100 flex items-center justify-center">
-//                 <FiMapPin className="text-[#F04F5A]" />
-//               </div>
-
-//               <div>
-//                 <h4 className="font-semibold text-gray-900">
-//                   Factory Location
-//                 </h4>
-
-//                 <p className="text-gray-600">
-//                   Tehsil Israna, VPO Palri,
-//                   Haryana - 132145
-//                 </p>
-//               </div>
-
-//             </div>
-
-//             {/* Features */}
-
-//             <div className="grid sm:grid-cols-2 gap-5 mt-10">
-
-//               <div className="flex gap-3">
-//                 <FiCheckCircle className="text-[#F59E0B] text-xl mt-1" />
-//                 <span>Advanced Digital Printing Technology</span>
-//               </div>
-
-//               <div className="flex gap-3">
-//                 <FiCheckCircle className="text-[#F59E0B] text-xl mt-1" />
-//                 <span>Premium Textile Manufacturing</span>
-//               </div>
-
-//               <div className="flex gap-3">
-//                 <FiCheckCircle className="text-[#F59E0B] text-xl mt-1" />
-//                 <span>Skilled Technical Team</span>
-//               </div>
-
-//               <div className="flex gap-3">
-//                 <FiCheckCircle className="text-[#F59E0B] text-xl mt-1" />
-//                 <span>Reliable Customer Support</span>
-//               </div>
-
-//             </div>
-
-//             {/* Buttons */}
-
-//             <div className="flex flex-wrap gap-5 mt-10">
-
-//               <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#F04F5A] to-[#FFB300] text-white font-semibold flex items-center gap-2 hover:scale-105 transition">
-//                 Learn More
-//                 <FiArrowUpRight />
-//               </button>
-
-//               <button className="px-8 py-4 rounded-full border border-gray-300 font-semibold hover:bg-gray-100 transition">
-//                 Contact Us
-//               </button>
-
-//             </div>
-
-//           </div>
-
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default AboutSection;
-
-
-import {
-  FiCheckCircle,
-  FiArrowUpRight,
-  FiMapPin,
-} from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const AboutSection = () => {
   return (
-    <section className="bg-white py-15 lg:py-20">
-      <div className="max-w-7xl mx-auto px-5 lg:px-8">
+    <section className="bg-white py-16 lg:py-20 select-none">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* LEFT SIDE */}
+          {/* ================= LEFT SIDE ================= */}
 
-          <div className="relative">
+          <div className="relative pb-10 md:pb-12 lg:pb-0">
 
             {/* Main Image */}
-            <img
-              src={aboutImg}
-              alt="Factory"
-              className="
-                w-full
-                h-[420px]
-                sm:h-[480px]
-                lg:h-[520px]
-                object-cover
-                rounded-[30px]
-                sm:rounded-[35px]
-              "
-            />
 
-            {/* Image Overlay */}
-            <div
-              className="
-                absolute
-                inset-0
-                rounded-[30px]
-                sm:rounded-[35px]
-                bg-gradient-to-t
-                from-[#241B24]/20
-                to-transparent
-                pointer-events-none
-              "
-            ></div>
+            <div className="relative overflow-hidden rounded-[30px] sm:rounded-[35px]">
+
+              <img
+                src={aboutImg}
+                alt="Chakrin Digital Textiles Factory"
+                className="
+                  w-full
+                  h-[420px]
+                  sm:h-[480px]
+                  lg:h-[520px]
+                  object-cover
+                "
+              />
+
+              {/* Image Overlay */}
+
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-chakrin-heading/20
+                  to-transparent
+                  pointer-events-none
+                "
+              />
+
+            </div>
 
             {/* Floating Image */}
 
-            <div className="hidden md:block absolute -bottom-12 right-0 w-60">
+            <div
+              className="
+                hidden
+                md:block
+                absolute
+                -bottom-8
+                lg:-bottom-10
+                right-0
+                w-52
+                lg:w-60
+              "
+            >
 
               <img
                 src={machineImg}
-                alt="Machine"
+                alt="Chakrin Digital Textile Printing Machine"
                 className="
                   w-full
                   rounded-3xl
                   shadow-2xl
                   border-8
                   border-white
+                  object-cover
                 "
               />
 
@@ -202,7 +79,7 @@ const AboutSection = () => {
           </div>
 
 
-          {/* RIGHT SIDE */}
+          {/* ================= RIGHT SIDE ================= */}
 
           <div>
 
@@ -213,11 +90,11 @@ const AboutSection = () => {
                 uppercase
                 tracking-[4px]
                 text-sm
-                font-semibold
                 text-chakrin-primary
+                font-semibold
               "
             >
-              About Chakrin
+              Who We Are?
             </span>
 
 
@@ -226,173 +103,75 @@ const AboutSection = () => {
             <h2
               className="
                 mt-5
-                text-3xl
-                sm:text-4xl
+                text-4xl
                 md:text-5xl
                 font-extrabold
                 leading-tight
                 text-chakrin-heading
               "
             >
-              Innovative Digital Textile
+              Transforming Fashion Through
 
-              <span
-                className="
-                  text-transparent
-                  bg-clip-text
-                  bg-gradient-to-r
-                  from-chakrin-primary
-                  to-chakrin-secondary
-                "
-              >
-                {" "}Printing Solutions
+              <span className="text-chakrin-primary">
+                {" "}Digital Textile Printing
               </span>
-
             </h2>
 
 
             {/* Description */}
 
-            <p
-              className="
-                mt-6
-                text-chakrin-text
-                leading-8
-                text-base
-                sm:text-lg
-              "
-            >
-              Chakrin Digital Textiles is committed to delivering premium
-              digital textile printing solutions with advanced technology,
-              precision manufacturing, and reliable production standards.
-              We focus on quality, innovation, and customer satisfaction
-              to meet the growing demands of the textile industry.
+            <p className="mt-6 text-chakrin-text leading-8">
+              The inception of Chakrin Digital Textiles took place in 2021 with
+              a vision to transform the world of fashion and textiles. With
+              innovation happening in every corner, we envisioned providing
+              several possibilities to distinct craft and its beautiful designs.
+            </p>
+
+            <p className="mt-4 text-chakrin-text leading-8">
+              At Chakrin, you will unlock a world of creativity with
+              cutting-edge machinery that helps create detailed designs in
+              vibrant colours.
             </p>
 
 
-            {/* Address */}
+            {/* Highlight */}
 
-            <div className="mt-6 flex items-start gap-3">
+            <div className="mt-8 flex items-center gap-4">
 
-              <div
+              <div className="h-12 w-1 shrink-0 rounded-full bg-chakrin-primary" />
+
+              <p
                 className="
-                  w-11
-                  h-11
-                  shrink-0
-                  rounded-full
-                  bg-chakrin-secondary-light
-                  flex
-                  items-center
-                  justify-center
+                  text-xl
+                  md:text-2xl
+                  font-semibold
+                  text-chakrin-primary
                 "
               >
-                <FiMapPin
-                  className="text-chakrin-primary text-lg"
-                />
-              </div>
-
-
-              <div>
-
-                <h4 className="font-semibold text-chakrin-heading">
-                  Factory Location
-                </h4>
-
-                <p className="text-chakrin-text">
-                  Tehsil Israna, VPO Palri,
-                  Haryana - 132145
-                </p>
-
-              </div>
+                Discover premium material, fabric and innovative prints.
+              </p>
 
             </div>
 
 
-            {/* Features */}
+            {/* ================= BUTTONS ================= */}
 
-            <div className="grid sm:grid-cols-2 gap-5 mt-10">
+            <div
+              className="
+                flex
+                flex-col
+                sm:flex-row
+                flex-wrap
+                gap-4
+                sm:gap-5
+                mt-10
+              "
+            >
 
-              <div className="flex gap-3">
+              {/* Learn More */}
 
-                <FiCheckCircle
-                  className="
-                    text-chakrin-primary
-                    text-xl
-                    mt-1
-                    shrink-0
-                  "
-                />
-
-                <span className="text-chakrin-heading">
-                  Advanced Digital Printing Technology
-                </span>
-
-              </div>
-
-
-              <div className="flex gap-3">
-
-                <FiCheckCircle
-                  className="
-                    text-chakrin-primary
-                    text-xl
-                    mt-1
-                    shrink-0
-                  "
-                />
-
-                <span className="text-chakrin-heading">
-                  Premium Textile Manufacturing
-                </span>
-
-              </div>
-
-
-              <div className="flex gap-3">
-
-                <FiCheckCircle
-                  className="
-                    text-chakrin-primary
-                    text-xl
-                    mt-1
-                    shrink-0
-                  "
-                />
-
-                <span className="text-chakrin-heading">
-                  Skilled Technical Team
-                </span>
-
-              </div>
-
-
-              <div className="flex gap-3">
-
-                <FiCheckCircle
-                  className="
-                    text-chakrin-primary
-                    text-xl
-                    mt-1
-                    shrink-0
-                  "
-                />
-
-                <span className="text-chakrin-heading">
-                  Reliable Customer Support
-                </span>
-
-              </div>
-
-            </div>
-
-
-            {/* Buttons */}
-
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5 mt-10">
-
-              {/* Primary Button */}
-
-              <button
+              <Link
+                to="/about"
                 className="
                   px-7
                   sm:px-8
@@ -419,12 +198,13 @@ const AboutSection = () => {
               >
                 Learn More
                 <FiArrowUpRight />
-              </button>
+              </Link>
 
 
-              {/* Secondary Button */}
+              {/* Contact Us */}
 
-              <button
+              <Link
+                to="/contact"
                 className="
                   px-7
                   sm:px-8
@@ -435,6 +215,9 @@ const AboutSection = () => {
                   border-chakrin-border
                   text-chakrin-heading
                   font-semibold
+                  flex
+                  items-center
+                  justify-center
                   hover:bg-chakrin-secondary-light
                   hover:border-chakrin-primary
                   hover:text-chakrin-primary
@@ -443,7 +226,7 @@ const AboutSection = () => {
                 "
               >
                 Contact Us
-              </button>
+              </Link>
 
             </div>
 

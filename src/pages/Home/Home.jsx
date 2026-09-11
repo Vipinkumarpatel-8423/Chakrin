@@ -5,6 +5,8 @@ import ReviewsSection from "../../components/home/ReviewsSection";
 import StatsSection from "../../components/home/StatsSection";
 import VideoSection from "../../components/home/VideoSection";
 import AboutSection from "../../components/home/AboutSection";
+import ServicesSection from "../../components/home/ServicesSection";
+import WhyChooseUs from "../../components/home/WhyChooseUs";
 
 
 const Home = () => {
@@ -12,10 +14,12 @@ const Home = () => {
     <>
       <Hero />
       <AboutSection />
+      <ServicesSection/>
       <VideoSection />
+      <WhyChooseUs/>
       <StatsSection />
-      <GalleryShowcase />
       <BusinessSection />
+      <GalleryShowcase />
       <ReviewsSection />
     </>
   );

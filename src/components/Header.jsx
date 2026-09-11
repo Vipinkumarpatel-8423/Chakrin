@@ -30,7 +30,7 @@ const Header = () => {
                 }`
               }
             >
-              Home
+              HOME
             </NavLink>
 
             {/* About */}
@@ -44,11 +44,11 @@ const Header = () => {
                 }`
               }
             >
-              About Us
+              ABOUT US
             </NavLink>
 
             {/* Blog */}
-            <NavLink
+            {/* <NavLink
               to="/blog"
               className={({ isActive }) =>
                 `relative font-medium transition-all duration-300 hover:text-chakrin-primary-light
@@ -59,10 +59,11 @@ const Header = () => {
               }
             >
               Blog
-            </NavLink>
+            </NavLink> */}
 
             {/* Businesses Dropdown */}
-            <div className="group relative">
+
+            {/* <div className="group relative">
               <button className="flex items-center gap-1 font-medium text-gray-800 hover:text-chakrin-primary-light transition-all duration-300">
                 Businesses
                 <FiChevronDown className="text-sm transition-transform duration-300 group-hover:rotate-180" />
@@ -90,10 +91,10 @@ const Header = () => {
                   Spare Parts
                 </NavLink>
               </div>
-            </div>
+            </div> */}
 
             {/* Gallery */}
-            <NavLink
+            {/* <NavLink
               to="/gallery"
               className={({ isActive }) =>
                 `relative font-medium transition-all duration-300 hover:text-chakrin-primary-light
@@ -104,7 +105,7 @@ const Header = () => {
               }
             >
               Gallery
-            </NavLink>
+            </NavLink> */}
 
             {/* Contact */}
             <NavLink
@@ -117,7 +118,7 @@ const Header = () => {
                 }`
               }
             >
-              Contact
+              CONTACT
             </NavLink>
           </nav>
 
@@ -186,7 +187,7 @@ hover:to-chakrin-primary-light
                 }`
               }
             >
-              Home
+              HOME
             </NavLink>
 
             {/* About */}
@@ -200,11 +201,11 @@ hover:to-chakrin-primary-light
                 }`
               }
             >
-              About
+              ABOUT US
             </NavLink>
 
             {/* Blog */}
-            <NavLink
+            {/* <NavLink
               to="/blog"
               onClick={() => setMobileMenu(false)}
               className={({ isActive }) =>
@@ -215,11 +216,11 @@ hover:to-chakrin-primary-light
               }
             >
               Blog
-            </NavLink>
+            </NavLink> */}
 
             {/* ================= BUSINESSES ================= */}
 
-            <div className="w-full">
+            {/* <div className="w-full">
               <button
                 type="button"
                 className="w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium text-gray-800 hover:bg-gray-50  transition-all duration-300"
@@ -229,7 +230,7 @@ hover:to-chakrin-primary-light
                 <FiChevronDown className="text-lg" />
               </button>
 
-              {/* Business Items */}
+
 
               <div className="mt-1 ml-3 border-l-2 border-gray-100 pl-3">
                 <NavLink
@@ -271,10 +272,10 @@ hover:to-chakrin-primary-light
                   Spare Parts
                 </NavLink>
               </div>
-            </div>
+            </div> */}
 
             {/* Gallery */}
-            <NavLink
+            {/* <NavLink
               to="/gallery"
               onClick={() => setMobileMenu(false)}
               className={({ isActive }) =>
@@ -285,7 +286,7 @@ hover:to-chakrin-primary-light
               }
             >
               Gallery
-            </NavLink>
+            </NavLink> */}
 
             {/* Contact */}
             <NavLink
@@ -298,7 +299,7 @@ hover:to-chakrin-primary-light
                 }`
               }
             >
-              Contact
+              CONTACT
             </NavLink>
 
             {/* Connect Button */}

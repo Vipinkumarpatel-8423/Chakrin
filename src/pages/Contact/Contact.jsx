@@ -6,27 +6,28 @@ import {
   FiClock,
   FiArrowRight,
 } from "react-icons/fi";
+
 import ContactHero from "../../components/Contact/ContactHero";
 import ContactMap from "../../components/Contact/ContactMap";
 
 const contactInfo = [
   {
     icon: FiPhone,
-    title: "Hotline Number",
+    title: "Phone Number",
     value: "+91 90840 00006",
     subText: "Mon - Sat | 9:00 AM - 6:00 PM",
   },
   {
     icon: FiMail,
-    title: "Support Email",
-    value: "support@chakrin.com",
+    title: "Email Address",
+    value: "chakrindigitaltextiles@gmail.com",
     subText: "We reply within 24 hours",
   },
   {
     icon: FiMapPin,
     title: "Office Address",
-    value: "Palri, Israna, Haryana",
-    subText: "132145, India",
+    value: "VPO Palri, Tehsil Israna",
+    subText: "Panipat, Haryana - 132145 Located 90 KMs from IGI Airport Delhi",
   },
   {
     icon: FiClock,
@@ -38,24 +39,24 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f8f9fb] ">
+    <section className="relative overflow-hidden bg-chakrin-secondary-light">
 
-      {/* Decorative Background */}
+      {/* ================= HERO ================= */}
+
       <ContactHero />
-      <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-orange-400/10 blur-3xl" />
 
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-red-400/10 blur-3xl" />
+      {/* ================= DECORATIVE GLOW ================= */}
+
+      <div className="pointer-events-none absolute -left-32 top-40 h-72 w-72 rounded-full bg-chakrin-primary/10 blur-3xl" />
+
+      <div className="pointer-events-none absolute -right-32 bottom-20 h-80 w-80 rounded-full bg-chakrin-secondary/10 blur-3xl" />
+
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
-        {/* Heading */}
+        {/* ================= CONTACT INFO ================= */}
 
-
-
-
-        {/* Contact Information Cards */}
-
-        <div className="mb-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+        <div className="relative z-10 -mt-8 mb-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:-mt-12 lg:grid-cols-4 lg:gap-6">
 
           {contactInfo.map((item, index) => {
             const Icon = item.icon;
@@ -79,24 +80,62 @@ const Contact = () => {
                 whileHover={{
                   y: -7,
                 }}
-                className="group rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow duration-300 hover:shadow-xl sm:p-6"
+                className="
+                  group
+                  rounded-2xl
+                  border
+                  border-chakrin-border
+                  bg-white
+                  p-5
+                  shadow-sm
+                  transition-all
+                  duration-300
+                  hover:border-chakrin-primary/30
+                  hover:shadow-xl
+                  sm:p-6
+                "
               >
 
                 {/* Icon */}
 
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-500 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#F04F5A] group-hover:to-[#FFB300] group-hover:text-white">
+                <div
+                  className="
+                    mb-5
+                    flex
+                    h-11
+                    w-11
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-chakrin-secondary-light
+                    text-chakrin-primary
+                    transition-all
+                    duration-300
+                    group-hover:bg-chakrin-primary
+                    group-hover:text-white
+                  "
+                >
                   <Icon size={20} />
                 </div>
 
-                <h3 className="text-sm font-bold text-gray-900">
+
+                {/* Title */}
+
+                <h3 className="text-sm font-bold text-chakrin-heading">
                   {item.title}
                 </h3>
 
-                <p className="mt-2 break-words text-sm font-medium text-gray-700">
+
+                {/* Value */}
+
+                <p className="mt-2 break-words text-sm font-semibold text-chakrin-text">
                   {item.value}
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-gray-400">
+
+                {/* Sub Text */}
+
+                <p className="mt-1 text-xs leading-5 text-chakrin-text/60">
                   {item.subText}
                 </p>
 
@@ -107,11 +146,22 @@ const Contact = () => {
         </div>
 
 
-        {/* Contact Form Area */}
+        {/* ================= CONTACT FORM ================= */}
 
-        <div className="grid overflow-hidden rounded-3xl bg-white shadow-xl lg:grid-cols-2">
+        <div
+          className="
+            grid
+            overflow-hidden
+            rounded-3xl
+            border
+            border-chakrin-border
+            bg-white
+            shadow-xl
+            lg:grid-cols-2
+          "
+        >
 
-          {/* Left Content */}
+          {/* ================= LEFT CONTENT ================= */}
 
           <motion.div
             initial={{
@@ -124,36 +174,55 @@ const Contact = () => {
             }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative flex flex-col justify-center overflow-hidden bg-[#111827] p-7 sm:p-10 lg:p-14"
+            className="
+              relative
+              flex
+              flex-col
+              justify-center
+              overflow-hidden
+              bg-chakrin-heading
+              p-7
+              sm:p-10
+              lg:p-14
+            "
           >
 
-            {/* Background Glow */}
+            {/* Theme Glow */}
 
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-orange-500/20 blur-3xl" />
+            <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-chakrin-primary/20 blur-3xl" />
+
+            <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-chakrin-secondary/10 blur-3xl" />
+
 
             <div className="relative z-10">
 
-              <span className="text-xs font-semibold uppercase tracking-[3px] text-orange-400">
+              <span className="text-xs font-semibold uppercase tracking-[3px] text-chakrin-secondary">
                 Start A Conversation
               </span>
 
+
               <h3 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
                 Let’s Build Something
-                <span className="block text-orange-400">
+                <span className="block bg-gradient-to-r from-chakrin-primary to-chakrin-secondary bg-clip-text text-transparent">
                   Great Together.
                 </span>
               </h3>
 
-              <p className="mt-5 max-w-md text-sm leading-7 text-gray-300 sm:text-base">
+
+              <p className="mt-5 max-w-md text-sm leading-7 text-white/65 sm:text-base">
                 Whether you are looking for digital textile printing
                 solutions, machinery or technical support, our team is
                 ready to assist you.
               </p>
 
-              <div className="mt-8 h-px w-24 bg-gradient-to-r from-[#F04F5A] to-[#FFB300]" />
 
-              <p className="mt-6 text-sm text-gray-400">
-                Chakrin Digital Textile Solutions
+              {/* Divider */}
+
+              <div className="mt-8 h-[2px] w-20 rounded-full bg-gradient-to-r from-chakrin-primary to-chakrin-secondary" />
+
+
+              <p className="mt-6 text-sm text-white/50">
+                Chakrin Digital Textiles
               </p>
 
             </div>
@@ -161,7 +230,7 @@ const Contact = () => {
           </motion.div>
 
 
-          {/* Form */}
+          {/* ================= FORM ================= */}
 
           <motion.div
             initial={{
@@ -180,15 +249,17 @@ const Contact = () => {
             className="p-7 sm:p-10 lg:p-14"
           >
 
+            {/* Form Heading */}
+
             <div className="mb-7">
 
-              {/* <span className="text-xs font-semibold uppercase tracking-[3px] text-orange-500">
-                Contact Us
-              </span> */}
-
-              <h3 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl">
+              <h3 className="text-2xl font-bold text-chakrin-heading sm:text-3xl">
                 Send Your Message
               </h3>
+
+              <p className="mt-2 text-sm text-chakrin-text">
+                Get in touch with our team for your textile requirements.
+              </p>
 
             </div>
 
@@ -200,27 +271,66 @@ const Contact = () => {
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 
                 <div>
-                  <label className="mb-2 block text-xs font-semibold text-gray-700">
+
+                  <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
                     Your Name
                   </label>
 
                   <input
                     type="text"
                     placeholder="Enter your name"
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none transition focus:border-orange-400 focus:bg-white focus:ring-2 focus:ring-orange-100"
+                    className="
+                      w-full
+                      rounded-xl
+                      border
+                      border-chakrin-border
+                      bg-chakrin-secondary-light/50
+                      px-4
+                      py-3
+                      text-sm
+                      text-chakrin-heading
+                      outline-none
+                      transition
+                      placeholder:text-chakrin-text/50
+                      focus:border-chakrin-primary
+                      focus:bg-white
+                      focus:ring-2
+                      focus:ring-chakrin-primary/10
+                    "
                   />
+
                 </div>
 
+
                 <div>
-                  <label className="mb-2 block text-xs font-semibold text-gray-700">
+
+                  <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
                     Your Email
                   </label>
 
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none transition focus:border-orange-400 focus:bg-white focus:ring-2 focus:ring-orange-100"
+                    className="
+                      w-full
+                      rounded-xl
+                      border
+                      border-chakrin-border
+                      bg-chakrin-secondary-light/50
+                      px-4
+                      py-3
+                      text-sm
+                      text-chakrin-heading
+                      outline-none
+                      transition
+                      placeholder:text-chakrin-text/50
+                      focus:border-chakrin-primary
+                      focus:bg-white
+                      focus:ring-2
+                      focus:ring-chakrin-primary/10
+                    "
                   />
+
                 </div>
 
               </div>
@@ -231,27 +341,66 @@ const Contact = () => {
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 
                 <div>
-                  <label className="mb-2 block text-xs font-semibold text-gray-700">
+
+                  <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
                     Phone Number
                   </label>
 
                   <input
                     type="tel"
                     placeholder="Enter phone number"
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none transition focus:border-orange-400 focus:bg-white focus:ring-2 focus:ring-orange-100"
+                    className="
+                      w-full
+                      rounded-xl
+                      border
+                      border-chakrin-border
+                      bg-chakrin-secondary-light/50
+                      px-4
+                      py-3
+                      text-sm
+                      text-chakrin-heading
+                      outline-none
+                      transition
+                      placeholder:text-chakrin-text/50
+                      focus:border-chakrin-primary
+                      focus:bg-white
+                      focus:ring-2
+                      focus:ring-chakrin-primary/10
+                    "
                   />
+
                 </div>
 
+
                 <div>
-                  <label className="mb-2 block text-xs font-semibold text-gray-700">
+
+                  <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
                     Subject
                   </label>
 
                   <input
                     type="text"
                     placeholder="How can we help?"
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none transition focus:border-orange-400 focus:bg-white focus:ring-2 focus:ring-orange-100"
+                    className="
+                      w-full
+                      rounded-xl
+                      border
+                      border-chakrin-border
+                      bg-chakrin-secondary-light/50
+                      px-4
+                      py-3
+                      text-sm
+                      text-chakrin-heading
+                      outline-none
+                      transition
+                      placeholder:text-chakrin-text/50
+                      focus:border-chakrin-primary
+                      focus:bg-white
+                      focus:ring-2
+                      focus:ring-chakrin-primary/10
+                    "
                   />
+
                 </div>
 
               </div>
@@ -261,28 +410,71 @@ const Contact = () => {
 
               <div>
 
-                <label className="mb-2 block text-xs font-semibold text-gray-700">
+                <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
                   Message
                 </label>
 
                 <textarea
                   rows="5"
                   placeholder="Write your message..."
-                  className="w-full resize-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none transition focus:border-orange-400 focus:bg-white focus:ring-2 focus:ring-orange-100"
+                  className="
+                    w-full
+                    resize-none
+                    rounded-xl
+                    border
+                    border-chakrin-border
+                    bg-chakrin-secondary-light/50
+                    px-4
+                    py-3
+                    text-sm
+                    text-chakrin-heading
+                    outline-none
+                    transition
+                    placeholder:text-chakrin-text/50
+                    focus:border-chakrin-primary
+                    focus:bg-white
+                    focus:ring-2
+                    focus:ring-chakrin-primary/10
+                  "
                 />
 
               </div>
 
 
-              {/* Button */}
+              {/* Submit Button */}
 
               <button
                 type="submit"
-                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#F04F5A] to-[#FFB300] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition duration-300 hover:scale-[1.03]"
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  gap-3
+                  rounded-full
+                  bg-chakrin-primary
+                  px-7
+                  py-3.5
+                  text-sm
+                  font-semibold
+                  text-white
+                  shadow-lg
+                  shadow-chakrin-primary/20
+                  transition-all
+                  duration-300
+                  hover:bg-chakrin-primary-dark
+                  hover:scale-[1.03]
+                "
               >
+
                 Send Message
 
-                <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                <FiArrowRight
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
+                />
 
               </button>
 
@@ -293,7 +485,12 @@ const Contact = () => {
         </div>
 
       </div>
+
+
+      {/* ================= MAP ================= */}
+
       <ContactMap />
+
     </section>
   );
 };
