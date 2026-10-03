@@ -69,12 +69,12 @@ const TeamSection = () => {
         {/* Cards */}
 
         <div className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          xl:grid-cols-4
-          gap-6
-          lg:gap-8
+          flex
+  flex-wrap
+  justify-center
+  gap-6
+  lg:gap-8
+          
         ">
 
           {directors.map((item, index) => (

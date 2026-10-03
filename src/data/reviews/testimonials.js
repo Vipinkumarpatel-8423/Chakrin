@@ -1,10 +1,10 @@
-import user1 from "../../assets/users/user1.jpg";
-import user2 from "../../assets/users/user2.jpg";
-import user3 from "../../assets/users/user3.jpg";
+import user1 from "../../assets/users/user.png";
+import user2 from "../../assets/users/user.png";
+import user3 from "../../assets/users/user.png";
 
 export const testimonials = [
   {
-    name: "Mukesh Desai",
+    name: "Naresh Singh",
     company: "True Colors",
     rating: 5,
     review:
@@ -12,7 +12,7 @@ export const testimonials = [
     image: user1,
   },
   {
-    name: "Gopal Patil",
+    name: "Raj",
     company: "Textile Industry",
     rating: 5,
     review:
@@ -20,7 +20,7 @@ export const testimonials = [
     image: user2,
   },
   {
-    name: "Sahil Davra",
+    name: "Mukesh Kumar",
     company: "Printing Solutions",
     rating: 5,
     review:
@@ -28,27 +28,12 @@ export const testimonials = [
     image: user3,
   },
   {
-    name: "Sahil Davra",
+    name: "Sahil Yadav",
     company: "Printing Solutions",
     rating: 5,
     review:
       "Very reliable textile printing solutions with world-class quality.",
     image: user3,
   },
-  {
-    name: "Sahil Davra",
-    company: "Printing Solutions",
-    rating: 5,
-    review:
-      "Very reliable textile printing solutions with world-class quality.",
-    image: user3,
-  },
-  {
-    name: "Sahil Davra",
-    company: "Printing Solutions",
-    rating: 5,
-    review:
-      "Very reliable textile printing solutions with world-class quality.",
-    image: user3,
-  },
+  
 ];

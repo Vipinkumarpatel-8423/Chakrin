@@ -11,7 +11,7 @@ import TeamSection from "../../components/about/TeamSection";
 
 const stats = [
   {
-    number: "15",
+    number: "2",
     suffix: "+",
     title: "Years Experience",
   },

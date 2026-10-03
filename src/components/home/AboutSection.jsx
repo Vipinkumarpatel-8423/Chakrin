@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import aboutImg from "../../assets/about-1.jpg";
-import machineImg from "../../assets/about-2.jpg";
+import aboutImg from "../../assets/about-1.png";
+import machineImg from "../../assets/about-2.png";
 
 import { FiArrowUpRight } from "react-icons/fi";
 

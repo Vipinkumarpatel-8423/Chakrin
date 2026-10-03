@@ -130,7 +130,6 @@
 
 // export default GalleryShowcase;
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
@@ -155,12 +154,10 @@ const GalleryShowcase = () => {
       className="
         relative
         bg-chakrin-secondary-light
-        
-        overflow-hidden
+        overflow-visible
         select-none
       "
     >
-
       {/* Background Area */}
 
       <div
@@ -172,7 +169,6 @@ const GalleryShowcase = () => {
           overflow-hidden
         "
       >
-
         {/* Background */}
 
         <motion.div
@@ -189,7 +185,6 @@ const GalleryShowcase = () => {
           />
         </motion.div>
 
-
         {/* Theme Overlay */}
 
         <div
@@ -199,7 +194,6 @@ const GalleryShowcase = () => {
             bg-chakrin-heading/75
           "
         />
-
 
         {/* Subtle Pink Glow */}
 
@@ -231,7 +225,6 @@ const GalleryShowcase = () => {
           "
         />
 
-
         {/* Content */}
 
         <div
@@ -248,7 +241,6 @@ const GalleryShowcase = () => {
             px-5
           "
         >
-
           {/* Small Label */}
 
           <motion.span
@@ -268,7 +260,6 @@ const GalleryShowcase = () => {
             Our Gallery
           </motion.span>
 
-
           {/* Heading */}
 
           <motion.h2
@@ -287,7 +278,6 @@ const GalleryShowcase = () => {
             "
           >
             Moments at{" "}
-
             <span
               className="
                 text-transparent
@@ -300,7 +290,6 @@ const GalleryShowcase = () => {
               Chakrin
             </span>
           </motion.h2>
-
 
           {/* Description */}
 
@@ -324,11 +313,8 @@ const GalleryShowcase = () => {
           >
             Our achievements, events and successful journey.
           </motion.p>
-
         </div>
-
       </div>
-
 
       {/* Floating Slider */}
 
@@ -343,9 +329,7 @@ const GalleryShowcase = () => {
           z-20
         "
       >
-
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-
           <Swiper
             modules={[Autoplay]}
             loop
@@ -370,11 +354,8 @@ const GalleryShowcase = () => {
               },
             }}
           >
-
             {images.map((img, index) => (
-
               <SwiperSlide key={index}>
-
                 <motion.div
                   whileHover={{
                     y: -12,
@@ -394,7 +375,6 @@ const GalleryShowcase = () => {
                     shadow-chakrin-primary/10
                   "
                 >
-
                   <img
                     src={img}
                     alt={`Chakrin Gallery ${index + 1}`}
@@ -427,19 +407,12 @@ const GalleryShowcase = () => {
                       transition
                     "
                   />
-
                 </motion.div>
-
               </SwiperSlide>
-
             ))}
-
           </Swiper>
-
         </div>
-
       </div>
-
     </section>
   );
 };

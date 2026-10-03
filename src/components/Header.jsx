@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+import { FiMenu, FiX} from "react-icons/fi";
 
 import { FiArrowUpRight } from "react-icons/fi";
-import { Navigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo/Logo.png";
 
 const Header = () => {

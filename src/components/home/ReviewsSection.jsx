@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 const ReviewsSection = () => {
   return (
-    <section className="relative overflow-hidden bg-chakrin-secondary-light py-8 md:py-10 lg:pb-24">
+    <section className="relative overflow-hidden bg-chakrin-secondary-light py-35 md:py-40 lg:py-43">
 
       {/* Background Glow */}
 

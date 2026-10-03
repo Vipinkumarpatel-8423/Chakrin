@@ -4,15 +4,15 @@ import Counter from "../Common/Counter";
 
 const stats = [
   {
-    number: 15,
+    number: 1.6,
     suffix: "+",
     title: "Years Of Experience",
     desc: "Decades of experience in delivering impactful digital textile solutions.",
   },
   {
-    number: 690,
+    number: 20,
     suffix: "K",
-    title: "Meters Monthly Output",
+    title: "Meters Daily Capacity",
     desc: "High production capacity with advanced digital textile technology.",
   },
   {

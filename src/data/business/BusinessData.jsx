@@ -19,12 +19,19 @@ const businesses = [
     image: machine,
   },
   {
-    title: "Sublimation Paper",
-    subtitle: "Premium Transfer Paper",
-    description:
-      "High-quality sublimation paper ensuring vibrant color transfer, sharp image quality and excellent durability for digital printing.",
-    image: paper,
-  },
+  title: "Ready For Dyeing & Ready For Printing",
+  subtitle: "Complete Textile Processing Solutions",
+  description:
+    "Complete ready-to-dye and ready-to-print textile solutions designed for consistent quality, efficient processing and reliable production performance.",
+  image: paper,
+},
+  // {
+  //   title: "Ready For Dyeing and Ready For Printing Setup",
+  //   subtitle: "Premium Transfer Paper",
+  //   description:
+  //     "High-quality sublimation paper ensuring vibrant color transfer, sharp image quality and excellent durability for digital printing.",
+  //   image: paper,
+  // },
 ];
 
 
