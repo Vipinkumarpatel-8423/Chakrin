@@ -16,7 +16,7 @@ const stats = [
     desc: "High production capacity with advanced digital textile technology.",
   },
   {
-    number: 65000 ,
+    number: 86000 ,
     suffix: "+",
     title: "Square Feet Area",
     desc: "Modern infrastructure designed for efficient manufacturing.",

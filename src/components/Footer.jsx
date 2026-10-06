@@ -508,9 +508,10 @@ const Footer = () => {
             flex
             flex-col
             md:flex-row
-            justify-between
+            justify-center
             items-center
             gap-4
+            
           "
         >
 

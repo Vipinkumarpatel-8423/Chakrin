@@ -15,7 +15,10 @@ const Home = () => {
       <Hero />
       <AboutSection />
       <ServicesSection/>
-      <VideoSection />
+       {/* Video Section - Desktop Only */}
+      <div className="hidden lg:block">
+        <VideoSection />
+      </div>
       <WhyChooseUs/>
       <StatsSection />
       <BusinessSection />

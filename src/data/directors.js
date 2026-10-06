@@ -1,4 +1,4 @@
-import d1 from "../assets/team/Director.png";
+import d1 from "../assets/team/managing-director.png";
 import d2 from "../assets/team/Director2.png";
 // import d3 from "../assets/team/d3.png";
 // import d4 from "../assets/team/d4.png";
@@ -6,13 +6,13 @@ import d2 from "../assets/team/Director2.png";
 export const directors = [
   {
     image: d1,
-    name: "Sanjay Desai",
-    role: "Director of Sales & Marketing",
+    name: "RACHIT SIHAG",
+    role: "Managing Director",
     desc: "Leading business growth with innovative textile solutions.",
   },
   {
     image: d2,
-    name: "Yash Singh",
+    name: "YASH SINGH",
     role: "Director",
     desc: "Ensuring world-class production and operational excellence.",
   },
