@@ -44,6 +44,21 @@ const AppRoutes = () => {
           <Route path="gallery" element={<Gallery />} />
           <Route path="contact" element={<Contact />} />
 
+          <Route
+        path="/business/digital-textile-printing"
+        element={<DigitalPrinting />}
+      />
+
+      <Route
+        path="/business/textile-machinery"
+        element={<TextileMachine />}
+      />
+
+      <Route
+        path="/business/ready-for-dyeing-ready-for-printing"
+        element={<SpareParts />}
+      />
+
           {/* <Route path="about-us" element={<About />} />
 
           <Route path="blog" element={<Blog />} />

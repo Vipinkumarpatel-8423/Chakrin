@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import businessData from "../../data/business/BusinessData";
+import { Link } from "react-router-dom";
 
 const BusinessSection = () => {
   return (
@@ -143,7 +144,39 @@ const BusinessSection = () => {
 
                 {/* Button */}
 
-                <button
+                <Link
+  to={`/business/${item.slug}`}
+  className="
+    group
+    mt-8
+    inline-flex
+    items-center
+    gap-3
+    rounded-full
+    bg-gradient-to-r
+    from-chakrin-primary
+    to-chakrin-secondary
+    px-7
+    py-3.5
+    font-semibold
+    text-white
+    shadow-lg
+    shadow-chakrin-primary/20
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:shadow-xl
+    hover:shadow-chakrin-primary/25
+  "
+>
+  Learn More
+
+  <FiArrowRight
+    className="transition-transform duration-300 group-hover:translate-x-1"
+  />
+</Link>
+
+                {/* <button
                   className="
                     group
                     mt-8
@@ -174,7 +207,7 @@ const BusinessSection = () => {
                     className="transition-transform duration-300 group-hover:translate-x-1"
                   />
 
-                </button>
+                </button> */}
 
               </div>
 

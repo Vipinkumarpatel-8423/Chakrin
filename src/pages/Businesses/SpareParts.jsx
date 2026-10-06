@@ -1,131 +1,369 @@
 import { motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 import {
-  FaTools,
-  FaCogs,
   FaCheckCircle,
   FaArrowRight,
-  FaWrench,
-  FaShieldAlt,
-  FaBoxOpen,
+  FaArrowLeft,
+  FaTint,
+  FaPrint,
+  FaLayerGroup,
+  FaIndustry,
+  FaPalette,
 } from "react-icons/fa";
 
-import sparePartsImage from "../../assets/business/spare-parts.jpg";
+import sparePartsImage from "../../assets/business/paper.jpg";
 
 const SpareParts = () => {
+  const navigate = useNavigate();
+
   const highlights = [
     {
-      icon: <FaCogs />,
-      title: "Quality Components",
-      text: "Reliable and carefully selected components designed for dependable textile machinery performance.",
+      icon: <FaTint />,
+      title: "Ready For Dyeing",
+      text: "Prepared textile solutions designed to support consistent dye absorption, colour development and efficient downstream processing.",
     },
     {
-      icon: <FaWrench />,
-      title: "Easy Replacement",
-      text: "Precisely compatible parts that make maintenance and replacement quicker and more convenient.",
+      icon: <FaPrint />,
+      title: "Ready For Printing",
+      text: "Print-ready textile surfaces developed to provide reliable colour reproduction, sharp detailing and consistent print performance.",
     },
     {
-      icon: <FaShieldAlt />,
-      title: "Reliable Performance",
-      text: "Durable components built to support smooth and consistent machine operation.",
+      icon: <FaLayerGroup />,
+      title: "Consistent Quality",
+      text: "Textile preparation focused on uniformity, dependable processing and consistent results across different production requirements.",
     },
   ];
 
   const benefits = [
-    "Wide range of textile machine spare parts",
-    "Quality-tested components",
-    "Parts for regular maintenance",
-    "Reliable machine compatibility",
-    "Reduced machine downtime",
-    "Technical assistance and support",
+    "Textiles prepared for dyeing applications",
+    "Print-ready fabric solutions",
+    "Consistent fabric surface and quality",
+    "Improved colour absorption and reproduction",
+    "Suitable for customized textile requirements",
+    "Efficient preparation for downstream processing",
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-6 sm:py-8 lg:py-10">
+    <section className="relative overflow-hidden bg-white py-5 sm:py-5 md:py-5 lg:py-5">
 
-      {/* Background Decorations */}
+      {/* =========================
+          BACKGROUND DECORATIONS
+      ========================== */}
 
-      <div className="pointer-events-none absolute right-[-180px] top-[-120px] h-[420px] w-[420px] rounded-full bg-orange-400/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 -top-32 h-72 w-72 rounded-full bg-chakrin-primary/10 blur-3xl sm:h-80 sm:w-80" />
 
-      <div className="pointer-events-none absolute bottom-[-160px] left-[-150px] h-[400px] w-[400px] rounded-full bg-red-400/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-chakrin-secondary/10 blur-3xl sm:h-96 sm:w-96" />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
-        {/* Heading */}
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        {/* =========================
+            BACK TO BUSINESSES
+        ========================== */}
+
+        <div className="mb-8 sm:mb-10">
+
+          <button
+            onClick={() => navigate(-1)}
+            className="
+              group
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-chakrin-border
+              bg-white
+              px-4
+              py-2.5
+              text-xs
+              font-semibold
+              text-chakrin-heading
+              shadow-sm
+              transition-all
+              duration-300
+              hover:-translate-x-1
+              hover:border-chakrin-primary
+              hover:bg-chakrin-primary
+              hover:text-white
+              hover:shadow-lg
+              sm:px-5
+              sm:py-3
+              sm:text-sm
+            "
+          >
+
+            <FaArrowLeft
+              className="
+                text-chakrin-primary
+                transition-transform
+                duration-300
+                group-hover:-translate-x-1
+                group-hover:text-white
+              "
+            />
+
+            <span>Back to Businesses</span>
+
+          </button>
+
+        </div>
+
+
+        {/* =========================
+            SECTION HEADING
+        ========================== */}
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mb-12 max-w-3xl text-center lg:mb-16"
+          className="mx-auto mb-12 max-w-3xl text-center sm:mb-14 lg:mb-20"
         >
-          {/* <span className="text-xs font-semibold uppercase tracking-[4px] text-[#F04F5A] sm:text-sm">
-            Spare Parts
-          </span> */}
 
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
-            The Right Parts For
-            <span className="block bg-gradient-to-r from-[#F04F5A] to-[#FFB300] bg-clip-text text-transparent">
-              Reliable Performance
+          <span
+            className="
+              inline-flex
+              items-center
+              rounded-full
+              bg-chakrin-secondary-light
+              px-4
+              py-2
+              text-[10px]
+              font-bold
+              uppercase
+              tracking-[2.5px]
+              text-chakrin-primary
+              sm:text-xs
+              sm:tracking-[3px]
+            "
+          >
+            Textile Processing Solutions
+          </span>
+
+
+          <h1
+            className="
+              mt-5
+              text-3xl
+              font-extrabold
+              leading-tight
+              tracking-tight
+              text-chakrin-heading
+              sm:text-4xl
+              md:text-5xl
+              lg:text-6xl
+            "
+          >
+            Ready For Dyeing{" "}
+            <span className="bg-gradient-to-r from-chakrin-primary to-chakrin-secondary bg-clip-text text-transparent">
+              & Ready For Printing
             </span>
-          </h2>
+          </h1>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-500 sm:text-base">
-            Keep your textile machinery running smoothly with dependable
-            spare parts designed for maintenance, replacement and long-term
-            machine performance.
+
+          <p
+            className="
+              mx-auto
+              mt-5
+              max-w-2xl
+              text-sm
+              leading-7
+              text-chakrin-text
+              sm:text-base
+              sm:leading-8
+            "
+          >
+            Quality-focused textile solutions prepared for efficient dyeing
+            and printing processes, helping manufacturers achieve consistent
+            colour development, print quality and reliable production
+            performance.
           </p>
+
         </motion.div>
 
-        {/* Main Showcase */}
 
-        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        {/* =========================
+            MAIN SHOWCASE
+        ========================== */}
 
-          {/* Left Image */}
+        <div
+          className="
+            grid
+            items-center
+            gap-12
+            lg:grid-cols-[0.95fr_1.05fr]
+            lg:gap-16
+            xl:gap-20
+          "
+        >
+
+          {/* =========================
+              IMAGE
+          ========================== */}
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative mx-auto w-full max-w-xl lg:max-w-none"
           >
 
-            {/* Decorative Shape */}
+            {/* Decorative Frame */}
 
-            <div className="absolute -left-4 -top-4 h-full w-full rounded-[2rem] bg-gradient-to-br from-[#F04F5A]/20 to-[#FFB300]/20 sm:-left-6 sm:-top-6" />
+            <div
+              className="
+                absolute
+                -left-3
+                -top-3
+                h-full
+                w-full
+                rounded-[1.75rem]
+                border-2
+                border-chakrin-border
+                sm:-left-5
+                sm:-top-5
+                sm:rounded-[2rem]
+              "
+            />
 
-            <div className="relative overflow-hidden rounded-[2rem] shadow-2xl">
+
+            <div
+              className="
+                relative
+                overflow-hidden
+                rounded-[1.75rem]
+                bg-chakrin-secondary-light
+                shadow-[0_20px_60px_rgba(166,61,130,0.14)]
+                sm:rounded-[2rem]
+              "
+            >
 
               <img
                 src={sparePartsImage}
-                alt="Textile Machine Spare Parts"
-                className="h-[320px] w-full object-cover transition duration-700 hover:scale-105 sm:h-[430px] lg:h-[540px]"
+                alt="Ready For Dyeing and Ready For Printing Textile Solutions"
+                className="
+                  h-[280px]
+                  w-full
+                  object-cover
+                  object-center
+                  transition-transform
+                  duration-700
+                  hover:scale-105
+                  sm:h-[380px]
+                  md:h-[450px]
+                  lg:h-[500px]
+                  xl:h-[540px]
+                "
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-              {/* Floating Box */}
+              {/* Image Overlay */}
 
-              <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/20 bg-white/90 p-4 shadow-xl backdrop-blur-md sm:bottom-7 sm:left-7 sm:right-auto sm:min-w-[260px]">
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-chakrin-heading/70
+                  via-chakrin-heading/10
+                  to-transparent
+                "
+              />
 
-                <div className="flex items-center gap-3">
 
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#F04F5A] to-[#FFB300] text-white">
-                    <FaBoxOpen />
-                  </div>
+              {/* Floating Industry Badge */}
 
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#F04F5A]">
-                      Parts & Components
-                    </p>
+              <div
+                className="
+                  absolute
+                  left-4
+                  top-4
+                  flex
+                  items-center
+                  gap-3
+                  rounded-2xl
+                  border
+                  border-white/20
+                  bg-chakrin-heading/60
+                  px-3
+                  py-2.5
+                  text-white
+                  backdrop-blur-md
+                  sm:left-6
+                  sm:top-6
+                  sm:px-4
+                  sm:py-3
+                "
+              >
 
-                    <p className="mt-1 text-sm font-bold text-gray-900 sm:text-base">
-                      Built For Your Machines
-                    </p>
-                  </div>
+                <div
+                  className="
+                    flex
+                    h-9
+                    w-9
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-gradient-to-br
+                    from-chakrin-primary
+                    to-chakrin-secondary
+                    text-sm
+                    text-white
+                    shadow-lg
+                  "
+                >
+                  <FaIndustry />
+                </div>
+
+                <div>
+
+                  <p className="text-[9px] uppercase tracking-[2px] text-white/70 sm:text-[10px]">
+                    Textile Processing
+                  </p>
+
+                  <p className="text-xs font-semibold sm:text-sm">
+                    Dyeing & Printing
+                  </p>
 
                 </div>
+
+              </div>
+
+
+              {/* Bottom Info */}
+
+              <div
+                className="
+                  absolute
+                  bottom-4
+                  left-4
+                  right-4
+                  rounded-2xl
+                  border
+                  border-white/30
+                  bg-white/90
+                  p-4
+                  shadow-xl
+                  backdrop-blur-md
+                  sm:bottom-6
+                  sm:left-6
+                  sm:right-auto
+                  sm:min-w-[275px]
+                  sm:p-5
+                "
+              >
+
+                <p className="text-[10px] font-bold uppercase tracking-[2px] text-chakrin-primary sm:text-xs">
+                  Prepared For Performance
+                </p>
+
+                <p className="mt-1 text-sm font-bold text-chakrin-heading sm:text-base">
+                  Quality • Consistency • Efficiency
+                </p>
 
               </div>
 
@@ -133,38 +371,107 @@ const SpareParts = () => {
 
           </motion.div>
 
-          {/* Right Content */}
+
+          {/* =========================
+              RIGHT CONTENT
+          ========================== */}
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="w-full"
           >
 
-            <div className="inline-flex items-center gap-2 rounded-full border border-orange-100 bg-orange-50 px-4 py-2 text-xs font-semibold text-orange-600 sm:text-sm">
-              <FaTools />
-              Complete Spare Parts Support
+            {/* Label */}
+
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-chakrin-border
+                bg-chakrin-secondary-light
+                px-4
+                py-2
+                text-xs
+                font-semibold
+                text-chakrin-primary
+                sm:text-sm
+              "
+            >
+
+              <FaPalette />
+
+              Ready For Dyeing & Printing
+
             </div>
 
-            <h3 className="mt-5 text-2xl font-bold leading-tight text-gray-900 sm:text-3xl lg:text-4xl">
-              Minimize Downtime.
+
+            {/* Heading */}
+
+            <h2
+              className="
+                mt-5
+                text-2xl
+                font-extrabold
+                leading-tight
+                text-chakrin-heading
+                sm:text-3xl
+                lg:text-4xl
+              "
+            >
+              Prepared For Better
               <span className="block">
-                Maximize{" "}
-                <span className="text-[#F04F5A]">
-                  Productivity.
+                <span className="text-chakrin-primary">
+                  Colour & Print Performance
                 </span>
               </span>
-            </h3>
+            </h2>
 
-            <p className="mt-5 text-sm leading-7 text-gray-600 sm:text-base">
-              The right spare part at the right time can make a major
-              difference to your production. We help textile businesses
-              maintain their machines with dependable components and
-              practical support.
+
+            {/* Description */}
+
+            <p
+              className="
+                mt-5
+                text-sm
+                leading-7
+                text-chakrin-text
+                sm:text-base
+                sm:leading-8
+              "
+            >
+              Our Ready For Dyeing and Ready For Printing solutions are
+              developed to support textile manufacturers with fabrics and
+              textile materials prepared for efficient downstream processing.
+              The focus is on consistency, surface quality and dependable
+              performance during dyeing and printing applications.
             </p>
 
-            {/* Benefits */}
+            <p
+              className="
+                mt-4
+                text-sm
+                leading-7
+                text-chakrin-text
+                sm:text-base
+                sm:leading-8
+              "
+            >
+              By preparing textiles appropriately for their intended process,
+              manufacturers can achieve more consistent colour development,
+              cleaner print definition and improved production efficiency
+              across different textile applications.
+            </p>
+
+
+            {/* =========================
+                BENEFITS
+            ========================== */}
 
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
 
@@ -180,30 +487,69 @@ const SpareParts = () => {
                   }}
                   className="flex items-start gap-3"
                 >
-                  <FaCheckCircle className="mt-1 shrink-0 text-[#F04F5A]" />
 
-                  <span className="text-sm leading-6 text-gray-600">
+                  <FaCheckCircle
+                    className="
+                      mt-1
+                      shrink-0
+                      text-chakrin-primary
+                    "
+                  />
+
+                  <span className="text-sm leading-6 text-chakrin-text">
                     {benefit}
                   </span>
+
                 </motion.div>
               ))}
 
             </div>
 
-            {/* CTA */}
+
+            {/* =========================
+                CTA
+            ========================== */}
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
 
-              <button
-                onClick={() => {
-                  window.location.href = "/contact";
-                }}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#F04F5A] to-[#FFB300] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl sm:px-8"
+              <Link
+                to="/contact"
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-full
+                  bg-gradient-to-r
+                  from-chakrin-primary
+                  to-chakrin-secondary
+                  px-7
+                  py-3.5
+                  text-sm
+                  font-semibold
+                  text-white
+                  shadow-lg
+                  shadow-chakrin-primary/20
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:shadow-xl
+                  hover:shadow-chakrin-primary/25
+                  sm:px-8
+                "
               >
-                Request Spare Parts
+                Discuss Your Requirement
 
-                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+                <FaArrowRight
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
+                />
+
+              </Link>
 
             </div>
 
@@ -211,9 +557,22 @@ const SpareParts = () => {
 
         </div>
 
-        {/* Feature Cards */}
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+        {/* =========================
+            FEATURE CARDS
+        ========================== */}
+
+        <div
+          className="
+            mt-14
+            grid
+            gap-5
+            sm:mt-16
+            sm:grid-cols-2
+            lg:mt-20
+            lg:grid-cols-3
+          "
+        >
 
           {highlights.map((item, index) => (
             <motion.div
@@ -225,24 +584,96 @@ const SpareParts = () => {
                 duration: 0.6,
                 delay: index * 0.1,
               }}
-              className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-[#F8F9FB] p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-xl sm:p-7"
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-3xl
+                border
+                border-chakrin-border
+                bg-chakrin-secondary-light
+                p-5
+                transition-all
+                duration-300
+                hover:-translate-y-2
+                hover:bg-white
+                hover:shadow-[0_20px_45px_rgba(166,61,130,0.10)]
+                sm:p-7
+              "
             >
 
               {/* Card Number */}
 
-              <span className="absolute right-5 top-4 text-5xl font-black text-gray-100 transition-colors duration-300 group-hover:text-orange-50">
+              <span
+                className="
+                  absolute
+                  right-5
+                  top-3
+                  text-5xl
+                  font-black
+                  text-chakrin-primary/5
+                  transition-colors
+                  duration-300
+                  group-hover:text-chakrin-primary/10
+                "
+              >
                 0{index + 1}
               </span>
 
-              <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#F04F5A] to-[#FFB300] text-lg text-white shadow-md">
+
+              {/* Icon */}
+
+              <div
+                className="
+                  relative
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  bg-gradient-to-br
+                  from-chakrin-primary
+                  to-chakrin-secondary
+                  text-lg
+                  text-white
+                  shadow-md
+                  shadow-chakrin-primary/20
+                  transition-transform
+                  duration-300
+                  group-hover:scale-110
+                "
+              >
                 {item.icon}
               </div>
 
-              <h4 className="relative mt-5 text-lg font-bold text-gray-900">
-                {item.title}
-              </h4>
 
-              <p className="relative mt-2 text-sm leading-6 text-gray-500">
+              {/* Title */}
+
+              <h3
+                className="
+                  relative
+                  mt-5
+                  text-lg
+                  font-bold
+                  text-chakrin-heading
+                "
+              >
+                {item.title}
+              </h3>
+
+
+              {/* Description */}
+
+              <p
+                className="
+                  relative
+                  mt-2
+                  text-sm
+                  leading-6
+                  text-chakrin-text
+                "
+              >
                 {item.text}
               </p>
 
