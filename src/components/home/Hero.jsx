@@ -6,161 +6,248 @@ import HeroBg from "../../assets/hero banner.png";
 
 const Hero = () => {
   const navigate = useNavigate();
+
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Background Image */}
-      <img
+    <section className="relative min-h-[calc(100vh-82px)] overflow-hidden bg-[#160D17]">
+
+      {/* ================= BACKGROUND IMAGE ================= */}
+
+      <motion.img
         src={HeroBg}
-        alt="Hero"
-        className="absolute inset-0 h-full w-full object-cover"
+        alt="Chakrin Digital Textiles Factory"
+        initial={{ scale: 1.05 }}
+        animate={{ scale: 1 }}
+        transition={{
+          duration: 10,
+          ease: "easeOut",
+        }}
+        className="
+          absolute
+          inset-0
+          h-full
+          w-full
+          object-cover
+          object-center
+          md:object-center
+        "
       />
 
-      {/* Overlay */}
-      {/* <div className="absolute inset-0 bg-[#160D17]/75"></div> */}
-<div className="absolute inset-0 bg-gradient-to-r from-[#160D17]/75 via-[#160D17]/50 to-transparent"></div>
-      {/* Chakrin Pink / Magenta Glow */}
+      {/* ================= OVERLAY ================= */}
+
       <div
-        className=" absolute
-      -left-40
-      top-1/2
-      h-[450px]
-      w-[450px]
-      -translate-y-1/2
-      rounded-full
-      bg-chakrin-primary/20
-      blur-[120px]"
-      ></div>
-
-      {/* Soft Pink Glow */}
-      {/* <div
         className="
-      absolute
-      -right-40
-      bottom-0
-      h-[400px]
-      w-[400px]
-      rounded-full
-      bg-chakrin-secondary/10
-      blur-[120px]
-    "
-      ></div> */}
+          absolute
+          inset-0
+          bg-gradient-to-r
+          from-[#160D17]/90
+          via-[#160D17]/65
+          to-[#160D17]/10
+          sm:from-[#160D17]/85
+          sm:via-[#160D17]/55
+          sm:to-transparent
+        "
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="min-h-screen flex items-center">
-          <div className="max-w-3xl">
+      {/* Mobile readability overlay */}
+
+      <div
+        className="
+          absolute
+          inset-0
+          bg-[#160D17]/20
+          sm:hidden
+        "
+      />
+
+      {/* ================= PINK GLOW ================= */}
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="
+          pointer-events-none
+          absolute
+          -left-40
+          top-1/2
+          h-[350px]
+          w-[350px]
+          -translate-y-1/2
+          rounded-full
+          bg-chakrin-primary/20
+          blur-[110px]
+          sm:h-[450px]
+          sm:w-[450px]
+        "
+      />
+
+      {/* ================= CONTENT ================= */}
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+        <div
+          className="
+            flex
+            min-h-[calc(100vh-82px)]
+            items-center
+            py-20
+            sm:py-24
+            lg:py-20
+          "
+        >
+
+          <div className="w-full max-w-3xl">
+
+            {/* ================= HEADING ================= */}
+
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className=" text-4xl
-            sm:text-5xl
-            md:text-7xl
-            xl:text-8xl
-            font-extrabold
-            leading-[1.05]
-            tracking-tight
-            text-white"
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              className="
+                text-4xl
+                font-extrabold
+                leading-[1.08]
+                tracking-tight
+                text-white
+                sm:text-5xl
+                md:text-6xl
+                lg:text-7xl
+                xl:text-8xl
+              "
             >
               World Class
               <br />
-              Textile
-              <span
-                className="text-transparent bg-clip-text bg-gradient-to-r
-    from-chakrin-primary
-    to-chakrin-secondary"
+
+              Textile{" "}
+
+              <motion.span
+                initial={{ opacity: 0, x: 25 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.25,
+                  ease: "easeOut",
+                }}
+                className="
+                  inline-block
+                  bg-gradient-to-r
+                  from-chakrin-primary
+                  to-chakrin-secondary
+                  bg-clip-text
+                  text-transparent
+                "
               >
-                {" "}
                 Printing
-              </span>
+              </motion.span>
             </motion.h1>
 
-            <p
-              className="mt-6
-            max-w-xl
-            text-base
-            sm:text-lg
-            leading-7
-            sm:leading-8
-            text-gray-300"
+
+            {/* ================= DESCRIPTION ================= */}
+
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.45,
+              }}
+              className="
+                mt-5
+                max-w-xl
+                text-sm
+                leading-6
+                text-gray-200
+                sm:mt-6
+                sm:text-base
+                sm:leading-7
+                lg:text-lg
+                lg:leading-8
+              "
             >
               Delivering advanced textile printing machines with unmatched
               quality, speed and precision for industries worldwide.
-            </p>
+            </motion.p>
 
-            <div className="mt-10 flex flex-wrap gap-5">
-              <button
-                className=" rounded-full
-              bg-gradient-to-r
-              from-chakrin-primary
-              to-chakrin-secondary
-              px-7
-              sm:px-8
-              py-3.5
-              sm:py-4
-              font-semibold
-              text-white
-              shadow-xl
-              shadow-chakrin-primary/20
-              transition-all
-              duration-300
-              hover:scale-105
-              hover:shadow-2xl
-              hover:shadow-chakrin-primary/30
-              cursor-pointer"
-              >
-                Explore Products
-              </button>
 
+            {/* ================= BUTTON ================= */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.65,
+              }}
+              className="mt-8 sm:mt-10"
+            >
               <button
                 onClick={() => navigate("/contact")}
-                className="flex
-              items-center
-              justify-center
-              gap-2
-              rounded-full
-              border
-              border-chakrin-secondary/50
-              px-7
-              sm:px-8
-              py-3.5
-              sm:py-4
-              font-semibold
-              text-white
-              backdrop-blur-md
-              bg-white/5
-              transition-all
-              duration-300
-              hover:bg-chakrin-primary
-              hover:border-chakrin-primary
-              hover:shadow-lg
-              hover:shadow-chakrin-primary/20
-              cursor-pointer"
+                className="
+                  group
+                  flex
+                  w-fit
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-full
+                  border
+                  border-chakrin-secondary/60
+                  bg-white/5
+                  px-6
+                  py-3
+                  font-semibold
+                  text-white
+                  backdrop-blur-md
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-chakrin-primary
+                  hover:bg-chakrin-primary
+                  hover:shadow-xl
+                  hover:shadow-chakrin-primary/25
+                  sm:px-8
+                  sm:py-4
+                "
               >
                 Contact Us
-                <FiArrowRight />
+
+                <FiArrowRight
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
+                />
               </button>
-            </div>
+            </motion.div>
+
           </div>
+
         </div>
+
       </div>
 
-      {/* Floating Card */}
 
-      {/* <div className="absolute bottom-10 right-10 hidden lg:block">
+      {/* ================= BOTTOM FADE ================= */}
 
-        <div className="rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-6">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          bottom-0
+          left-0
+          right-0
+          h-24
+          bg-gradient-to-t
+          from-[#160D17]/25
+          to-transparent
+        "
+      />
 
-          <h2 className="text-5xl font-bold text-white">
-            15+
-          </h2>
-
-          <p className="mt-2 text-gray-300">
-            Years of Industry Experience
-          </p>
-
-        </div>
-
-      </div> */}
     </section>
   );
 };

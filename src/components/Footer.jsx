@@ -384,7 +384,7 @@ const Footer = () => {
                 >
                   <FiPhone className="text-chakrin-secondary text-lg" />
                 </div>
-
+               <div>
                 <div>
 
                   <h5 className="text-white font-semibold">
@@ -397,7 +397,16 @@ const Footer = () => {
                   >
                     +91 90840 00006
                   </a>
+                  </div>
+                  <div>
+                   <a
+                    href="tel:+919084000006"
+                    className="mt-1 text-white/60 hover:text-chakrin-secondary transition"
+                  >
+                    +91 90840 00006
+                  </a>
 
+                </div>
                 </div>
 
               </div>

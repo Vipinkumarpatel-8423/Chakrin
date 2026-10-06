@@ -4,7 +4,7 @@ import Counter from "../Common/Counter";
 
 const stats = [
   {
-    number: 1.6,
+    number: 4,
     suffix: "+",
     title: "Years Of Experience",
     desc: "Decades of experience in delivering impactful digital textile solutions.",
@@ -16,8 +16,9 @@ const stats = [
     desc: "High production capacity with advanced digital textile technology.",
   },
   {
-    number: 3640,
-    title: "Factory Floor Space",
+    number: 65000 ,
+    suffix: "+",
+    title: "Square Feet Area",
     desc: "Modern infrastructure designed for efficient manufacturing.",
   },
   {

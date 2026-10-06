@@ -4,38 +4,77 @@ import {
   FiMail,
   FiMapPin,
   FiClock,
-  FiArrowRight,
 } from "react-icons/fi";
 
 import ContactHero from "../../components/Contact/ContactHero";
 import ContactMap from "../../components/Contact/ContactMap";
+import ContactForm from "../../components/Contact/ContactForm";
+
+// const contactInfo = [
+//   {
+//     icon: FiPhone,
+//     title: "Phone Number",
+//     value: "+91 90840 00006",
+//     subText: "Mon - Sat | 9:00 AM - 6:00 PM",
+//   },
+//   {
+//     icon: FiMail,
+//     title: "Email Address",
+//     value: "chakrindigitaltextiles@gmail.com",
+//     subText: "We reply within 24 hours",
+//   },
+//   {
+//     icon: FiMapPin,
+//     title: "Office Address",
+//     value: "VPO Palri, Tehsil Israna",
+//     subText: "Panipat, Haryana - 132145 Located 90 KMs from IGI Airport Delhi",
+//   },
+//   {
+//     icon: FiClock,
+//     title: "Working Days",
+//     value: "Monday - Saturday",
+//     subText: "Sunday Closed",
+//   },
+// ];
 
 const contactInfo = [
   {
     icon: FiPhone,
     title: "Phone Number",
-    value: "+91 90840 00006",
+    value: [
+      "+91 90840 00006",
+      "+91 90840 00006",
+    ],
     subText: "Mon - Sat | 9:00 AM - 6:00 PM",
+    type: "phone",
   },
+
   {
     icon: FiMail,
     title: "Email Address",
     value: "chakrindigitaltextiles@gmail.com",
     subText: "We reply within 24 hours",
+    type: "email",
   },
+
   {
     icon: FiMapPin,
     title: "Office Address",
     value: "VPO Palri, Tehsil Israna",
-    subText: "Panipat, Haryana - 132145 Located 90 KMs from IGI Airport Delhi",
+    subText:
+      "Panipat, Haryana - 132145 Located 90 KMs from IGI Airport Delhi",
+    type: "address",
   },
+
   {
     icon: FiClock,
     title: "Working Days",
     value: "Monday - Saturday",
     subText: "Sunday Closed",
+    type: "normal",
   },
 ];
+
 
 const Contact = () => {
   return (
@@ -128,9 +167,60 @@ const Contact = () => {
 
                 {/* Value */}
 
-                <p className="mt-2 break-words text-sm font-semibold text-chakrin-text">
+                {/* <p className="mt-2 break-words text-sm font-semibold text-chakrin-text">
                   {item.value}
-                </p>
+                </p> */}<div className="mt-2">
+
+  {item.type === "phone" ? (
+    <div className="flex flex-col gap-1">
+
+      {item.value.map((phone) => (
+        <a
+          key={phone}
+          href={`tel:${phone.replace(/\s/g, "")}`}
+          className="
+            w-fit
+            text-sm
+            font-semibold
+            text-chakrin-text
+            transition-colors
+            duration-300
+            hover:text-chakrin-primary
+          "
+        >
+          {phone}
+        </a>
+      ))}
+
+    </div>
+  ) : item.type === "email" ? (
+
+    <a
+      href={`mailto:${item.value}`}
+      className="
+        break-all
+        text-sm
+        font-semibold
+        text-chakrin-text
+        transition-colors
+        duration-300
+        hover:text-chakrin-primary
+      "
+    >
+      {item.value}
+    </a>
+
+  ) : (
+
+    <p className="break-words text-sm font-semibold text-chakrin-text">
+      {item.value}
+    </p>
+
+  )}
+
+</div>
+
+
 
 
                 {/* Sub Text */}
@@ -232,255 +322,7 @@ const Contact = () => {
 
           {/* ================= FORM ================= */}
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: 40,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.7,
-              delay: 0.1,
-            }}
-            className="p-7 sm:p-10 lg:p-14"
-          >
-
-            {/* Form Heading */}
-
-            <div className="mb-7">
-
-              <h3 className="text-2xl font-bold text-chakrin-heading sm:text-3xl">
-                Send Your Message
-              </h3>
-
-              <p className="mt-2 text-sm text-chakrin-text">
-                Get in touch with our team for your textile requirements.
-              </p>
-
-            </div>
-
-
-            <form className="space-y-5">
-
-              {/* Name + Email */}
-
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-
-                <div>
-
-                  <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
-                    Your Name
-                  </label>
-
-                  <input
-                    type="text"
-                    placeholder="Enter your name"
-                    className="
-                      w-full
-                      rounded-xl
-                      border
-                      border-chakrin-border
-                      bg-chakrin-secondary-light/50
-                      px-4
-                      py-3
-                      text-sm
-                      text-chakrin-heading
-                      outline-none
-                      transition
-                      placeholder:text-chakrin-text/50
-                      focus:border-chakrin-primary
-                      focus:bg-white
-                      focus:ring-2
-                      focus:ring-chakrin-primary/10
-                    "
-                  />
-
-                </div>
-
-
-                <div>
-
-                  <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
-                    Your Email
-                  </label>
-
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="
-                      w-full
-                      rounded-xl
-                      border
-                      border-chakrin-border
-                      bg-chakrin-secondary-light/50
-                      px-4
-                      py-3
-                      text-sm
-                      text-chakrin-heading
-                      outline-none
-                      transition
-                      placeholder:text-chakrin-text/50
-                      focus:border-chakrin-primary
-                      focus:bg-white
-                      focus:ring-2
-                      focus:ring-chakrin-primary/10
-                    "
-                  />
-
-                </div>
-
-              </div>
-
-
-              {/* Phone + Subject */}
-
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-
-                <div>
-
-                  <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
-                    Phone Number
-                  </label>
-
-                  <input
-                    type="tel"
-                    placeholder="Enter phone number"
-                    className="
-                      w-full
-                      rounded-xl
-                      border
-                      border-chakrin-border
-                      bg-chakrin-secondary-light/50
-                      px-4
-                      py-3
-                      text-sm
-                      text-chakrin-heading
-                      outline-none
-                      transition
-                      placeholder:text-chakrin-text/50
-                      focus:border-chakrin-primary
-                      focus:bg-white
-                      focus:ring-2
-                      focus:ring-chakrin-primary/10
-                    "
-                  />
-
-                </div>
-
-
-                <div>
-
-                  <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
-                    Subject
-                  </label>
-
-                  <input
-                    type="text"
-                    placeholder="How can we help?"
-                    className="
-                      w-full
-                      rounded-xl
-                      border
-                      border-chakrin-border
-                      bg-chakrin-secondary-light/50
-                      px-4
-                      py-3
-                      text-sm
-                      text-chakrin-heading
-                      outline-none
-                      transition
-                      placeholder:text-chakrin-text/50
-                      focus:border-chakrin-primary
-                      focus:bg-white
-                      focus:ring-2
-                      focus:ring-chakrin-primary/10
-                    "
-                  />
-
-                </div>
-
-              </div>
-
-
-              {/* Message */}
-
-              <div>
-
-                <label className="mb-2 block text-xs font-semibold text-chakrin-heading">
-                  Message
-                </label>
-
-                <textarea
-                  rows="5"
-                  placeholder="Write your message..."
-                  className="
-                    w-full
-                    resize-none
-                    rounded-xl
-                    border
-                    border-chakrin-border
-                    bg-chakrin-secondary-light/50
-                    px-4
-                    py-3
-                    text-sm
-                    text-chakrin-heading
-                    outline-none
-                    transition
-                    placeholder:text-chakrin-text/50
-                    focus:border-chakrin-primary
-                    focus:bg-white
-                    focus:ring-2
-                    focus:ring-chakrin-primary/10
-                  "
-                />
-
-              </div>
-
-
-              {/* Submit Button */}
-
-              <button
-                type="submit"
-                className="
-                  group
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  bg-chakrin-primary
-                  px-7
-                  py-3.5
-                  text-sm
-                  font-semibold
-                  text-white
-                  shadow-lg
-                  shadow-chakrin-primary/20
-                  transition-all
-                  duration-300
-                  hover:bg-chakrin-primary-dark
-                  hover:scale-[1.03]
-                "
-              >
-
-                Send Message
-
-                <FiArrowRight
-                  className="
-                    transition-transform
-                    duration-300
-                    group-hover:translate-x-1
-                  "
-                />
-
-              </button>
-
-            </form>
-
-          </motion.div>
+          <ContactForm/>
 
         </div>
 

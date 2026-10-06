@@ -12,8 +12,8 @@ export const directors = [
   },
   {
     image: d2,
-    name: "Satish Panchani",
-    role: "Director of Operations",
+    name: "Yash Singh",
+    role: "Director",
     desc: "Ensuring world-class production and operational excellence.",
   },
   // {

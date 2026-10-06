@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import video from "../../assets/videos/textile-video.mp4";
+// import video from "../../assets/videos/textile-video.mp4";
+import video from "../../assets/about-video/about-video.mp4";
+
 import poster from "../../assets/poster.jpg";
 
 const VideoSection = () => {

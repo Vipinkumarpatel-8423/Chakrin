@@ -5,13 +5,13 @@ import { FiChevronRight, FiHome } from "react-icons/fi";
 import aboutBg from "../../assets/about/about-banner.jpg"; // Change your image path
 import AboutSection from "../../components/home/AboutSection";
 import Counter from "../../components/Common/Counter";
-import VideoSection from "../../components/home/VideoSection";
+// import VideoSection from "../../components/home/VideoSection";
 import WorkingProcess from "../../components/about/WorkingProcess";
 import TeamSection from "../../components/about/TeamSection";
 
 const stats = [
   {
-    number: "2",
+    number: "4",
     suffix: "+",
     title: "Years Experience",
   },
@@ -223,7 +223,7 @@ const About = () => {
       </section>
       <AboutSection />
       <TeamSection />
-      <VideoSection />
+      {/* <VideoSection /> */}
       <WorkingProcess />
     </>
   );

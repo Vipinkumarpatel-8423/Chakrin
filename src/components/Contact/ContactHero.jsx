@@ -32,6 +32,12 @@ const ContactHero = () => {
       {/* Subtle Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/75" />
 
+      {/* Theme Glow */}
+
+        <div className="pointer-events-none absolute -left-40 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-chakrin-primary/20 blur-3xl"></div>
+
+        <div className="pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-chakrin-secondary/15 blur-3xl"></div>
+
       {/* Content */}
       <div className="relative z-10 flex min-h-[250px] items-center justify-center px-5 text-center sm:min-h-[300px] lg:min-h-[340px]">
 

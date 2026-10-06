@@ -1,27 +1,35 @@
-import { Link } from "react-router-dom";
+
+import { Link, useLocation } from "react-router-dom";
 import aboutImg from "../../assets/about-1.png";
 import machineImg from "../../assets/about-2.png";
+import aboutVideo from "../../assets/about-video/about-video.mp4";
 
 import { FiArrowUpRight } from "react-icons/fi";
 
 const AboutSection = () => {
+  const location = useLocation();
+
+  // Hide Learn More button only on About Us page
+  const isAboutPage = location.pathname === "/about-us";
+
   return (
     <section className="bg-white py-16 lg:py-20 select-none">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-
+      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
           {/* ================= LEFT SIDE ================= */}
 
           <div className="relative pb-10 md:pb-12 lg:pb-0">
+            {/* Main Video */}
 
-            {/* Main Image */}
-
-            <div className="relative overflow-hidden rounded-[30px] sm:rounded-[35px]">
-
-              <img
-                src={aboutImg}
-                alt="Chakrin Digital Textiles Factory"
+            <div className="relative overflow-hidden rounded-[0px] sm:rounded-[35px]">
+              <video
+                src={aboutVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={aboutImg}
                 className="
                   w-full
                   h-[420px]
@@ -31,7 +39,7 @@ const AboutSection = () => {
                 "
               />
 
-              {/* Image Overlay */}
+              {/* Video Overlay */}
 
               <div
                 className="
@@ -43,7 +51,6 @@ const AboutSection = () => {
                   pointer-events-none
                 "
               />
-
             </div>
 
             {/* Floating Image */}
@@ -60,7 +67,6 @@ const AboutSection = () => {
                 lg:w-60
               "
             >
-
               <img
                 src={machineImg}
                 alt="Chakrin Digital Textile Printing Machine"
@@ -73,16 +79,12 @@ const AboutSection = () => {
                   object-cover
                 "
               />
-
             </div>
-
           </div>
-
 
           {/* ================= RIGHT SIDE ================= */}
 
-          <div>
-
+          <div className="px-5">
             {/* Section Label */}
 
             <span
@@ -97,7 +99,6 @@ const AboutSection = () => {
               Who We Are?
             </span>
 
-
             {/* Heading */}
 
             <h2
@@ -111,12 +112,11 @@ const AboutSection = () => {
               "
             >
               Transforming Fashion Through
-
               <span className="text-chakrin-primary">
-                {" "}Digital Textile Printing
+                {" "}
+                Digital Textile Printing
               </span>
             </h2>
-
 
             {/* Description */}
 
@@ -133,11 +133,9 @@ const AboutSection = () => {
               vibrant colours.
             </p>
 
-
             {/* Highlight */}
 
             <div className="mt-8 flex items-center gap-4">
-
               <div className="h-12 w-1 shrink-0 rounded-full bg-chakrin-primary" />
 
               <p
@@ -150,9 +148,7 @@ const AboutSection = () => {
               >
                 Discover premium material, fabric and innovative prints.
               </p>
-
             </div>
-
 
             {/* ================= BUTTONS ================= */}
 
@@ -167,39 +163,39 @@ const AboutSection = () => {
                 mt-10
               "
             >
+              {/* Learn More - Hidden on /about-us */}
 
-              {/* Learn More */}
-
-              <Link
-                to="/about"
-                className="
-                  px-7
-                  sm:px-8
-                  py-3.5
-                  sm:py-4
-                  rounded-full
-                  bg-gradient-to-r
-                  from-chakrin-primary
-                  to-chakrin-secondary
-                  text-white
-                  font-semibold
-                  flex
-                  items-center
-                  justify-center
-                  gap-2
-                  shadow-lg
-                  shadow-chakrin-primary/20
-                  hover:scale-105
-                  hover:shadow-xl
-                  hover:shadow-chakrin-primary/30
-                  transition-all
-                  duration-300
-                "
-              >
-                Learn More
-                <FiArrowUpRight />
-              </Link>
-
+              {!isAboutPage && (
+                <Link
+                  to="/about-us"
+                  className="
+                    px-7
+                    sm:px-8
+                    py-3.5
+                    sm:py-4
+                    rounded-full
+                    bg-gradient-to-r
+                    from-chakrin-primary
+                    to-chakrin-secondary
+                    text-white
+                    font-semibold
+                    flex
+                    items-center
+                    justify-center
+                    gap-2
+                    shadow-lg
+                    shadow-chakrin-primary/20
+                    hover:scale-105
+                    hover:shadow-xl
+                    hover:shadow-chakrin-primary/30
+                    transition-all
+                    duration-300
+                  "
+                >
+                  Learn More
+                  <FiArrowUpRight />
+                </Link>
+              )}
 
               {/* Contact Us */}
 
@@ -227,13 +223,9 @@ const AboutSection = () => {
               >
                 Contact Us
               </Link>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

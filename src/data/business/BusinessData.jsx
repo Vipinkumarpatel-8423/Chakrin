@@ -1,5 +1,5 @@
 
-import fabric from "../../assets/business/fabric.jpg";
+import fabric from "../../assets/business/fabric-new.jpg";
 import machine from "../../assets/business/machine.jpg";
 import paper from "../../assets/business/paper.jpg";
 

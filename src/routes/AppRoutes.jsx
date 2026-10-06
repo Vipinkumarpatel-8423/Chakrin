@@ -14,6 +14,7 @@ import TextileMachine from "../pages/Businesses/TextileMachine";
 import SpareParts from "../pages/Businesses/SpareParts";
 import Gallery from "../pages/Gallery/Gallery";
 import Contact from "../pages/Contact/Contact";
+import ScrollToTop from "../components/Common/ScrollToTop";
 
 
 // import NotFound from "../pages/NotFound";
@@ -21,6 +22,7 @@ import Contact from "../pages/Contact/Contact";
 const AppRoutes = () => {
   return (
     <BrowserRouter>
+     <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
