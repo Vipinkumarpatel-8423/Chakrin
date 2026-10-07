@@ -1,5 +1,5 @@
-import d1 from "../assets/team/managing-director.png";
-import d2 from "../assets/team/Director2.png";
+import d1 from "../assets/team/managing-director1c.png";
+import d2 from "../assets/team/Director1c.png";
 
 export const directors = [
   {
