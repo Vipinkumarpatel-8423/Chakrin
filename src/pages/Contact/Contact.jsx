@@ -11,7 +11,7 @@ const contactInfo = [
   {
     icon: FiPhone,
     title: "Phone Number",
-    value: ["+91 90840 00006", "+91 90840 00006"],
+    value: ["+91 90840 00006", "+91 74220 00021"],
     subText: "Mon - Sat | 9:00 AM - 6:00 PM",
     type: "phone",
   },
@@ -55,285 +55,277 @@ const Contact = () => {
       <div className="pointer-events-none absolute -right-32 bottom-20 h-80 w-80 rounded-full bg-chakrin-secondary/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        {/* ================= CONTACT INFO ================= */}
+       
 
-        <div className="relative z-10 -mt-8 mb-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:-mt-12 lg:grid-cols-4 lg:gap-6">
-          {contactInfo.map((item, index) => {
-            const Icon = item.icon;
+       {/* CONTACT INFO */}
 
-            return (
-              <motion.div
-                key={item.title}
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                }}
-                whileHover={{
-                  y: -7,
-                }}
-                className="
-  group
-  relative
-  rounded-2xl
-  border
-  border-chakrin-border
-  bg-white
-  p-5
-  shadow-sm
-  transition-all
-  duration-300
-  hover:border-chakrin-primary/30
-  hover:shadow-xl
-  sm:p-6
-"
-              >
-                {/* Icon */}
+<div className="relative z-10 -mt-8 mb-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:-mt-12 lg:grid-cols-4 lg:gap-6">
 
-                <div
-                  className="
-                    mb-5
-                    flex
-                    h-11
-                    w-11
-                    items-center
-                    justify-center
-                    rounded-xl
-                    bg-chakrin-secondary-light
-                    text-chakrin-primary
-                    transition-all
-                    duration-300
-                    group-hover:bg-chakrin-primary
-                    group-hover:text-white
-                  "
-                >
-                  <Icon size={20} />
-                </div>
+  {contactInfo.map((item, index) => {
+    const Icon = item.icon;
 
-                {/* Title */}
+    return (
+      <motion.div
+        key={item.title}
 
-                <h3 className="text-sm font-bold text-chakrin-heading">
-                  {item.title}
-                </h3>
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
 
-                {/* Value */}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
 
-                {/* <p className="mt-2 break-words text-sm font-semibold text-chakrin-text">
-                  {item.value}
-                </p> */}
-                {/* ================= VALUE + QR ================= */}
+        viewport={{
+          once: true,
+          amount: 0.1,
+        }}
 
-                <div className="relative mt-2 min-h-[110px]">
-                  {/* ================= EMAIL ================= */}
+        transition={{
+          duration: 0.35,
+          delay: index * 0.05,
+          ease: "easeOut",
+        }}
 
-                  {item.type === "email" && (
-                    <>
-                      <div className="pr-28 sm:pr-32">
-                        <a
-                          href={`mailto:${item.value}`}
-                          className="
-            block
-            break-all
-            text-sm
-            font-semibold
-            leading-6
-            text-chakrin-text
-            transition-colors
-            duration-300
-            hover:text-chakrin-primary
-          "
-                        >
-                          {item.value}
-                        </a>
-                      </div>
+        whileHover={{
+          y: -4,
+        }}
 
-                      {/* Email QR */}
-
-                      <div
-                        className="
-          absolute
-          right-0
-          top-0
-          flex
-          flex-col
-          items-center
-        "
-                      >
-                        <img
-                          src={MailQrCode}
-                          alt="Scan to email Chakrin Digital Textiles"
-                          className="
-            h-24
-            w-24
-            rounded-xl
-            border
-            border-chakrin-border
-            bg-white
-            p-1.5
-            shadow-sm
-            transition-transform
-            duration-300
-            group-hover:scale-105
-            sm:h-28
-            sm:w-28
-            sm:p-2
-          "
-                        />
-
-                        <span
-                          className="
-            mt-2
-            whitespace-nowrap
-            text-[9px]
-            font-bold
-            uppercase
-            tracking-[1.5px]
-            text-chakrin-primary
-          "
-                        >
-                          Scan to Email
-                        </span>
-                      </div>
-                    </>
-                  )}
-
-                  {/* ================= PHONE ================= */}
-
-                  {item.type === "phone" && (
-                    <div className="flex flex-col gap-1">
-                      {item.value.map((phone) => (
-                        <a
-                          key={phone}
-                          href={`tel:${phone.replace(/\s/g, "")}`}
-                          className="
-            w-fit
-            text-sm
-            font-semibold
-            leading-6
-            text-chakrin-text
-            transition-colors
-            duration-300
-            hover:text-chakrin-primary
-          "
-                        >
-                          {phone}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* ================= OFFICE ADDRESS ================= */}
-
-                  {/* ================= OFFICE ADDRESS ================= */}
-
-{item.type === "address" && (
-  <>
-    <div className="relative min-h-[135px] pr-28 sm:pr-32">
-
-      {/* Address Text */}
-
-      <p className="text-sm font-semibold leading-6 text-chakrin-text">
-        {item.value}
-      </p>
-
-
-      {/* Address QR */}
-
-      <div
         className="
-          absolute
-          right-0
-          top-0
-          flex
-          flex-col
-          items-center
+          group
+          relative
+          rounded-2xl
+          border
+          border-chakrin-border
+          bg-white
+          p-5
+          shadow-sm
+          transition-all
+          duration-200
+          hover:border-chakrin-primary/30
+          hover:shadow-lg
+          sm:p-6
         "
       >
-        <img
-          src={OfficeQrCode}
-          alt="Scan for Chakrin Digital Textiles office address"
-          className="
-            h-24
-            w-24
-            rounded-xl
-            border
-            border-chakrin-border
-            bg-white
-            p-1.5
-            shadow-sm
-            transition-transform
-            duration-300
-            group-hover:scale-105
-            sm:h-28
-            sm:w-28
-            sm:p-2
-          "
-        />
 
-        <span
+        {/* Icon */}
+
+        <div
           className="
-            mt-2
-            whitespace-nowrap
-            text-[8px]
-            font-bold
-            uppercase
-            tracking-[1px]
+            mb-5
+            flex
+            h-11
+            w-11
+            items-center
+            justify-center
+            rounded-xl
+            bg-chakrin-secondary-light
             text-chakrin-primary
-            sm:text-[9px]
-            sm:tracking-[1.5px]
+            transition-all
+            duration-200
+            group-hover:bg-chakrin-primary
+            group-hover:text-white
           "
         >
-          Scan for Address
-        </span>
-      </div>
+          <Icon size={20} />
+        </div>
 
-    </div>
+        {/* Title */}
 
-    {/* Address Sub Text - Separate From QR */}
+        <h3 className="text-sm font-bold text-chakrin-heading">
+          {item.title}
+        </h3>
 
-    <p
-      className="
-        mt-2
-        max-w-[85%]
-        text-xs
-        leading-5
-        text-chakrin-text/60
-        sm:max-w-[90%]
-      "
-    >
-      {item.subText}
-    </p>
-  </>
-)}
+        {/* VALUE + QR */}
 
-                  {/* ================= NORMAL ================= */}
+        <div className="relative mt-2 min-h-[110px]">
 
-                  {item.type === "normal" && (
-                    <p className="text-sm font-semibold leading-6 text-chakrin-text">
-                      {item.value}
-                    </p>
-                  )}
+          {/* EMAIL */}
+
+          {item.type === "email" && (
+            <>
+              <div className="pr-28 sm:pr-32">
+                <a
+                  href={`mailto:${item.value}`}
+                  className="
+                    block
+                    break-all
+                    text-sm
+                    font-semibold
+                    leading-6
+                    text-chakrin-text
+                    transition-colors
+                    duration-200
+                    hover:text-chakrin-primary
+                  "
+                >
+                  {item.value}
+                </a>
+              </div>
+
+              {/* Email QR */}
+
+              <div className="absolute right-0 top-0 flex flex-col items-center">
+
+                <img
+                  src={MailQrCode}
+                  alt="Scan to email Chakrin Digital Textiles"
+                  className="
+                    h-24
+                    w-24
+                    rounded-xl
+                    border
+                    border-chakrin-border
+                    bg-white
+                    p-1.5
+                    shadow-sm
+                    transition-transform
+                    duration-200
+                    group-hover:scale-[1.02]
+                    sm:h-28
+                    sm:w-28
+                    sm:p-2
+                  "
+                />
+
+                <span
+                  className="
+                    mt-2
+                    whitespace-nowrap
+                    text-[9px]
+                    font-bold
+                    uppercase
+                    tracking-[1.5px]
+                    text-chakrin-primary
+                  "
+                >
+                  Scan to Email
+                </span>
+
+              </div>
+            </>
+          )}
+
+          {/* PHONE */}
+
+          {item.type === "phone" && (
+            <div className="flex flex-col gap-1">
+              {item.value.map((phone) => (
+                <a
+                  key={phone}
+                  href={`tel:${phone.replace(/\s/g, "")}`}
+                  className="
+                    w-fit
+                    text-sm
+                    font-semibold
+                    leading-6
+                    text-chakrin-text
+                    transition-colors
+                    duration-200
+                    hover:text-chakrin-primary
+                  "
+                >
+                  {phone}
+                </a>
+              ))}
+            </div>
+          )}
+
+          {/* OFFICE ADDRESS */}
+
+          {item.type === "address" && (
+            <>
+              <div className="relative min-h-[135px] pr-28 sm:pr-32">
+
+                <p className="text-sm font-semibold leading-6 text-chakrin-text">
+                  {item.value}
+                </p>
+
+                {/* Address QR */}
+
+                <div className="absolute right-0 top-0 flex flex-col items-center">
+
+                  <img
+                    src={OfficeQrCode}
+                    alt="Scan for Chakrin Digital Textiles office address"
+                    className="
+                      h-24
+                      w-24
+                      rounded-xl
+                      border
+                      border-chakrin-border
+                      bg-white
+                      p-1.5
+                      shadow-sm
+                      transition-transform
+                      duration-200
+                      group-hover:scale-[1.02]
+                      sm:h-28
+                      sm:w-28
+                      sm:p-2
+                    "
+                  />
+
+                  <span
+                    className="
+                      mt-2
+                      whitespace-nowrap
+                      text-[8px]
+                      font-bold
+                      uppercase
+                      tracking-[1px]
+                      text-chakrin-primary
+                      sm:text-[9px]
+                      sm:tracking-[1.5px]
+                    "
+                  >
+                    Scan for Address
+                  </span>
+
                 </div>
 
-                {/* Sub Text */}
+              </div>
 
-                {item.type !== "address" && (
-  <p className="mt-2 text-xs leading-5 text-chakrin-text/60">
-    {item.subText}
-  </p>
-)}
-              </motion.div>
-            );
-          })}
+              <p
+                className="
+                  mt-2
+                  max-w-[85%]
+                  text-xs
+                  leading-5
+                  text-chakrin-text/60
+                  sm:max-w-[90%]
+                "
+              >
+                {item.subText}
+              </p>
+            </>
+          )}
+
+          {/* NORMAL */}
+
+          {item.type === "normal" && (
+            <p className="text-sm font-semibold leading-6 text-chakrin-text">
+              {item.value}
+            </p>
+          )}
+
         </div>
+
+        {/* Sub Text */}
+
+        {item.type !== "address" && (
+          <p className="mt-2 text-xs leading-5 text-chakrin-text/60">
+            {item.subText}
+          </p>
+        )}
+
+      </motion.div>
+    );
+  })}
+
+</div>
 
         {/* ================= CONTACT FORM ================= */}
 
@@ -352,28 +344,34 @@ const Contact = () => {
           {/* ================= LEFT CONTENT ================= */}
 
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -40,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="
-              relative
-              flex
-              flex-col
-              justify-center
-              overflow-hidden
-              bg-chakrin-heading
-              p-7
-              sm:p-10
-              lg:p-14
-            "
-          >
+  initial={{
+    opacity: 0,
+    x: -20,
+  }}
+  whileInView={{
+    opacity: 1,
+    x: 0,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.1,
+  }}
+  transition={{
+    duration: 0.4,
+    ease: "easeOut",
+  }}
+  className="
+    relative
+    flex
+    flex-col
+    justify-center
+    overflow-hidden
+    bg-chakrin-heading
+    p-7
+    sm:p-10
+    lg:p-14
+  "
+>
             {/* Theme Glow */}
 
             <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-chakrin-primary/20 blur-3xl" />

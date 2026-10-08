@@ -23,146 +23,75 @@ const TeamSection = () => {
         lg:pt-20
       "
     >
-
       {/* =====================================================
-          ANIMATED BACKGROUND
+          SIMPLE ANIMATED BACKGROUND
       ====================================================== */}
 
-      {/* Large Primary Glow */}
+      {/* Primary Glow */}
 
       <motion.div
         animate={{
-          x: [0, 80, -30, 0],
-          y: [0, -40, 40, 0],
-          scale: [1, 1.15, 0.95, 1],
+          x: [0, 25, 0],
+          y: [0, -15, 0],
+          opacity: [0.45, 0.7, 0.45],
         }}
         transition={{
-          duration: 16,
+          duration: 6,
           repeat: Infinity,
           ease: "easeInOut",
         }}
         className="
           pointer-events-none
           absolute
-          -left-40
-          -top-40
-          h-[420px]
-          w-[420px]
+          -left-32
+          -top-32
+          h-72
+          w-72
           rounded-full
           bg-chakrin-primary/10
-          blur-[90px]
-          sm:h-[520px]
-          sm:w-[520px]
+          blur-3xl
+          sm:h-96
+          sm:w-96
         "
       />
 
-
-      {/* Large Secondary Glow */}
-
-      <motion.div
-        animate={{
-          x: [0, -70, 40, 0],
-          y: [0, 50, -30, 0],
-          scale: [1, 0.9, 1.15, 1],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          -bottom-48
-          -right-40
-          h-[450px]
-          w-[450px]
-          rounded-full
-          bg-chakrin-secondary/20
-          blur-[100px]
-          sm:h-[560px]
-          sm:w-[560px]
-        "
-      />
-
-
-      {/* Center Soft Glow */}
+      {/* Secondary Glow */}
 
       <motion.div
         animate={{
-          opacity: [0.2, 0.45, 0.2],
-          scale: [0.9, 1.1, 0.9],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          left-1/2
-          top-1/2
-          h-[300px]
-          w-[300px]
-          -translate-x-1/2
-          -translate-y-1/2
-          rounded-full
-          bg-chakrin-primary/5
-          blur-[80px]
-          sm:h-[450px]
-          sm:w-[450px]
-        "
-      />
-
-
-      {/* =====================================================
-          SUBTLE ANIMATED GRID
-      ====================================================== */}
-
-      <motion.div
-        animate={{
-          backgroundPosition: ["0px 0px", "40px 40px"],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          opacity-[0.18]
-        "
-        style={{
-          backgroundImage: `
-            linear-gradient(
-              rgba(166,61,130,0.08) 1px,
-              transparent 1px
-            ),
-            linear-gradient(
-              90deg,
-              rgba(166,61,130,0.08) 1px,
-              transparent 1px
-            )
-          `,
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-
-      {/* =====================================================
-          FLOATING DECORATIVE CIRCLES
-      ====================================================== */}
-
-      <motion.div
-        animate={{
-          y: [0, -25, 0],
-          rotate: [0, 10, 0],
+          x: [0, -25, 0],
+          y: [0, 15, 0],
+          opacity: [0.45, 0.7, 0.45],
         }}
         transition={{
           duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="
+          pointer-events-none
+          absolute
+          -bottom-32
+          -right-32
+          h-72
+          w-72
+          rounded-full
+          bg-chakrin-secondary/15
+          blur-3xl
+          sm:h-96
+          sm:w-96
+        "
+      />
+
+      {/* Small Decorative Dots */}
+
+      <motion.div
+        animate={{
+          y: [0, -10, 0],
+          opacity: [0.25, 0.6, 0.25],
+        }}
+        transition={{
+          duration: 3.5,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -170,26 +99,21 @@ const TeamSection = () => {
           pointer-events-none
           absolute
           left-[8%]
-          top-[28%]
-          hidden
-          h-14
-          w-14
+          top-[25%]
+          h-2
+          w-2
           rounded-full
-          border
-          border-chakrin-primary/15
-          sm:block
-          sm:h-20
-          sm:w-20
+          bg-chakrin-primary/40
         "
       />
 
       <motion.div
         animate={{
-          y: [0, 30, 0],
-          rotate: [0, -12, 0],
+          y: [0, 10, 0],
+          opacity: [0.25, 0.6, 0.25],
         }}
         transition={{
-          duration: 9,
+          duration: 4,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -197,63 +121,13 @@ const TeamSection = () => {
           pointer-events-none
           absolute
           right-[8%]
-          top-[18%]
-          hidden
-          h-16
-          w-16
-          rounded-full
-          border
-          border-chakrin-secondary/20
-          md:block
-          md:h-24
-          md:w-24
-        "
-      />
-
-      <motion.div
-        animate={{
-          y: [0, -20, 0],
-          x: [0, 15, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          bottom-[18%]
-          left-[5%]
+          top-[20%]
           h-3
           w-3
-          rounded-full
-          bg-chakrin-primary/30
-        "
-      />
-
-      <motion.div
-        animate={{
-          y: [0, 20, 0],
-          x: [0, -15, 0],
-        }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          bottom-[24%]
-          right-[6%]
-          h-4
-          w-4
           rounded-full
           bg-chakrin-secondary/40
         "
       />
-
 
       {/* =====================================================
           CONTENT
@@ -271,13 +145,12 @@ const TeamSection = () => {
           lg:px-8
         "
       >
-
         {/* ================= HEADING ================= */}
 
         <motion.div
           initial={{
             opacity: 0,
-            y: 40,
+            y: 20,
           }}
           whileInView={{
             opacity: 1,
@@ -285,11 +158,11 @@ const TeamSection = () => {
           }}
           viewport={{
             once: true,
-            amount: 0.2,
+            amount: 0.1,
           }}
           transition={{
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
+            duration: 0.4,
+            ease: "easeOut",
           }}
           className="
             relative
@@ -301,24 +174,22 @@ const TeamSection = () => {
             lg:mb-16
           "
         >
-
           {/* Small Heading */}
 
           <motion.span
             initial={{
               opacity: 0,
-              letterSpacing: "1px",
+              y: 8,
             }}
             whileInView={{
               opacity: 1,
-              letterSpacing: "4px",
+              y: 0,
             }}
             viewport={{
               once: true,
             }}
             transition={{
-              duration: 0.8,
-              delay: 0.15,
+              duration: 0.3,
             }}
             className="
               inline-block
@@ -331,7 +202,6 @@ const TeamSection = () => {
           >
             Leadership
           </motion.span>
-
 
           {/* Heading */}
 
@@ -351,7 +221,6 @@ const TeamSection = () => {
             Meet Our Leadership Team
           </h2>
 
-
           {/* Animated Accent */}
 
           <motion.div
@@ -367,8 +236,8 @@ const TeamSection = () => {
               once: true,
             }}
             transition={{
-              duration: 0.7,
-              delay: 0.35,
+              duration: 0.35,
+              delay: 0.1,
             }}
             className="
               mx-auto
@@ -381,7 +250,6 @@ const TeamSection = () => {
               sm:mt-5
             "
           />
-
 
           {/* Description */}
 
@@ -403,9 +271,7 @@ const TeamSection = () => {
             Experienced leaders driving innovation, quality and excellence
             in textile printing technology.
           </p>
-
         </motion.div>
-
 
         {/* ================= CARDS ================= */}
 
@@ -419,44 +285,29 @@ const TeamSection = () => {
             lg:gap-8
           "
         >
-
           {directors.map((item, index) => (
-
             <motion.div
               key={index}
-
-              /* Alternating entrance animation */
-
               initial={{
                 opacity: 0,
-                x:
-                  index % 2 === 0
-                    ? -80
-                    : 80,
-                y: 30,
+                y: 25,
               }}
-
               whileInView={{
                 opacity: 1,
-                x: 0,
                 y: 0,
               }}
-
               viewport={{
                 once: true,
-                amount: 0.2,
+                amount: 0.1,
               }}
-
               transition={{
-                duration: 0.8,
-                delay: index * 0.15,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.4,
+                delay: index * 0.08,
+                ease: "easeOut",
               }}
-
               whileHover={{
-                y: -10,
+                y: -7,
               }}
-
               className="
                 group
                 relative
@@ -466,50 +317,17 @@ const TeamSection = () => {
                 rounded-2xl
                 border
                 border-chakrin-border
-                bg-white/90
-                shadow-[0_10px_35px_rgba(166,61,130,0.07)]
-                backdrop-blur-sm
+                bg-white
+                shadow-[0_8px_25px_rgba(166,61,130,0.06)]
                 transition-all
-                duration-500
+                duration-300
                 hover:border-chakrin-primary/40
-                hover:shadow-[0_25px_60px_rgba(166,61,130,0.16)]
+                hover:shadow-[0_18px_40px_rgba(166,61,130,0.13)]
                 sm:max-w-[360px]
                 sm:rounded-3xl
                 lg:max-w-[380px]
               "
             >
-
-              {/* Animated Card Glow */}
-
-              <motion.div
-                animate={{
-                  x: ["-120%", "120%"],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                  ease: "linear",
-                }}
-                className="
-                  pointer-events-none
-                  absolute
-                  left-0
-                  top-0
-                  z-20
-                  h-full
-                  w-1/3
-                  -skew-x-12
-                  bg-gradient-to-r
-                  from-transparent
-                  via-white/25
-                  to-transparent
-                  opacity-0
-                  group-hover:opacity-100
-                "
-              />
-
-
               {/* ================= IMAGE ================= */}
 
               <div
@@ -522,7 +340,6 @@ const TeamSection = () => {
                   lg:aspect-[4/4.6]
                 "
               >
-
                 <img
                   src={item.image}
                   alt={item.name}
@@ -533,11 +350,10 @@ const TeamSection = () => {
                     object-cover
                     object-center
                     transition-transform
-                    duration-700
+                    duration-500
                     group-hover:scale-105
                   "
                 />
-
 
                 {/* Image Gradient */}
 
@@ -546,16 +362,15 @@ const TeamSection = () => {
                     absolute
                     inset-0
                     bg-gradient-to-t
-                    from-chakrin-primary/85
+                    from-chakrin-primary/80
                     via-chakrin-primary/5
                     to-transparent
                     opacity-0
-                    transition-all
-                    duration-500
+                    transition-opacity
+                    duration-300
                     group-hover:opacity-100
                   "
                 />
-
 
                 {/* Image Border Glow */}
 
@@ -568,12 +383,11 @@ const TeamSection = () => {
                     border
                     border-white/0
                     transition-all
-                    duration-500
+                    duration-300
                     group-hover:border-white/20
                     sm:rounded-t-3xl
                   "
                 />
-
 
                 {/* ================= SOCIAL ================= */}
 
@@ -584,18 +398,17 @@ const TeamSection = () => {
                     left-1/2
                     flex
                     -translate-x-1/2
-                    translate-y-5
+                    translate-y-4
                     gap-2
                     opacity-0
                     transition-all
-                    duration-500
+                    duration-300
                     group-hover:translate-y-0
                     group-hover:opacity-100
                     sm:bottom-5
                     sm:gap-3
                   "
                 >
-
                   {/* Facebook */}
 
                   <a
@@ -612,7 +425,7 @@ const TeamSection = () => {
                       text-chakrin-primary
                       shadow-lg
                       transition-all
-                      duration-300
+                      duration-200
                       hover:scale-110
                       hover:bg-chakrin-primary
                       hover:text-white
@@ -622,7 +435,6 @@ const TeamSection = () => {
                   >
                     <FaFacebookF className="text-sm sm:text-base" />
                   </a>
-
 
                   {/* Instagram */}
 
@@ -640,7 +452,7 @@ const TeamSection = () => {
                       text-chakrin-primary
                       shadow-lg
                       transition-all
-                      duration-300
+                      duration-200
                       hover:scale-110
                       hover:bg-chakrin-primary
                       hover:text-white
@@ -650,7 +462,6 @@ const TeamSection = () => {
                   >
                     <FaInstagram className="text-sm sm:text-base" />
                   </a>
-
 
                   {/* LinkedIn */}
 
@@ -668,7 +479,7 @@ const TeamSection = () => {
                       text-chakrin-primary
                       shadow-lg
                       transition-all
-                      duration-300
+                      duration-200
                       hover:scale-110
                       hover:bg-chakrin-primary
                       hover:text-white
@@ -678,11 +489,8 @@ const TeamSection = () => {
                   >
                     <FaLinkedinIn className="text-sm sm:text-base" />
                   </a>
-
                 </div>
-
               </div>
-
 
               {/* ================= CONTENT ================= */}
 
@@ -695,14 +503,13 @@ const TeamSection = () => {
                   lg:p-7
                 "
               >
-
                 <h3
                   className="
                     text-lg
                     font-bold
                     text-chakrin-heading
                     transition-colors
-                    duration-300
+                    duration-200
                     group-hover:text-chakrin-primary
                     sm:text-xl
                     lg:text-2xl
@@ -710,7 +517,6 @@ const TeamSection = () => {
                 >
                   {item.name}
                 </h3>
-
 
                 <p
                   className="
@@ -735,8 +541,7 @@ const TeamSection = () => {
                   {item.role}
                 </p>
 
-
-                {/* Bottom Animated Line */}
+                {/* Bottom Line */}
 
                 <motion.div
                   initial={{
@@ -744,6 +549,9 @@ const TeamSection = () => {
                   }}
                   whileHover={{
                     width: "70%",
+                  }}
+                  transition={{
+                    duration: 0.25,
                   }}
                   className="
                     mx-auto
@@ -755,17 +563,11 @@ const TeamSection = () => {
                     to-chakrin-secondary
                   "
                 />
-
               </div>
-
             </motion.div>
-
           ))}
-
         </div>
-
       </div>
-
     </section>
   );
 };

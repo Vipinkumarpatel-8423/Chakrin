@@ -1,7 +1,7 @@
 import AboutHero from "../../components/about/AboutHero";
 import AboutSection from "../../components/home/AboutSection";
 import WorkingProcess from "../../components/about/WorkingProcess";
-import TeamSection from "../../components/about/TeamSection";
+// import TeamSection from "../../components/about/TeamSection";
 
 const About = () => {
   return (
@@ -10,7 +10,7 @@ const About = () => {
 
       <AboutSection />
 
-      <TeamSection />
+      {/* <TeamSection /> */}
 
       {/* <VideoSection /> */}
 

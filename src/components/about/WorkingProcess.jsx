@@ -33,15 +33,6 @@ const process = [
   },
 ];
 
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
 const WorkingProcess = () => {
   return (
     <section
@@ -55,143 +46,16 @@ const WorkingProcess = () => {
         lg:py-28
       "
     >
-
       {/* =====================================================
-          ANIMATED BACKGROUND
+          LIGHT BACKGROUND ANIMATION
       ====================================================== */}
 
-      {/* Primary Glow */}
-
+      {/* Left Glow */}
       <motion.div
         animate={{
-          x: [0, 90, -40, 0],
-          y: [0, -50, 40, 0],
-          scale: [1, 1.15, 0.95, 1],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          -left-40
-          -top-40
-          h-[420px]
-          w-[420px]
-          rounded-full
-          bg-chakrin-primary/10
-          blur-[90px]
-          sm:h-[520px]
-          sm:w-[520px]
-        "
-      />
-
-
-      {/* Secondary Glow */}
-
-      <motion.div
-        animate={{
-          x: [0, -80, 50, 0],
-          y: [0, 50, -30, 0],
-          scale: [1, 0.9, 1.15, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          -bottom-48
-          -right-40
-          h-[450px]
-          w-[450px]
-          rounded-full
-          bg-chakrin-secondary/20
-          blur-[100px]
-          sm:h-[560px]
-          sm:w-[560px]
-        "
-      />
-
-
-      {/* Center Glow */}
-
-      <motion.div
-        animate={{
-          opacity: [0.15, 0.4, 0.15],
-          scale: [0.9, 1.12, 0.9],
-        }}
-        transition={{
-          duration: 9,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          left-1/2
-          top-1/2
-          h-[320px]
-          w-[320px]
-          -translate-x-1/2
-          -translate-y-1/2
-          rounded-full
-          bg-chakrin-primary/5
-          blur-[90px]
-          sm:h-[480px]
-          sm:w-[480px]
-        "
-      />
-
-
-      {/* =====================================================
-          ANIMATED GRID
-      ====================================================== */}
-
-      <motion.div
-        animate={{
-          backgroundPosition: ["0px 0px", "40px 40px"],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          opacity-[0.18]
-        "
-        style={{
-          backgroundImage: `
-            linear-gradient(
-              rgba(166,61,130,0.08) 1px,
-              transparent 1px
-            ),
-            linear-gradient(
-              90deg,
-              rgba(166,61,130,0.08) 1px,
-              transparent 1px
-            )
-          `,
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-
-      {/* =====================================================
-          FLOATING DECORATIVE ELEMENTS
-      ====================================================== */}
-
-      <motion.div
-        animate={{
-          y: [0, -25, 0],
-          rotate: [0, 12, 0],
+          x: [0, 35, 0],
+          y: [0, -20, 0],
+          opacity: [0.5, 0.8, 0.5],
         }}
         transition={{
           duration: 7,
@@ -201,94 +65,90 @@ const WorkingProcess = () => {
         className="
           pointer-events-none
           absolute
-          left-[7%]
-          top-[20%]
-          hidden
-          h-16
-          w-16
+          -left-32
+          -top-32
+          h-72
+          w-72
           rounded-full
-          border
-          border-chakrin-primary/15
-          sm:block
-          sm:h-20
-          sm:w-20
+          bg-chakrin-primary/10
+          blur-3xl
+          sm:h-96
+          sm:w-96
         "
       />
 
-
+      {/* Right Glow */}
       <motion.div
         animate={{
-          y: [0, 30, 0],
-          rotate: [0, -15, 0],
+          x: [0, -30, 0],
+          y: [0, 20, 0],
+          opacity: [0.5, 0.8, 0.5],
         }}
         transition={{
-          duration: 9,
+          duration: 8,
           repeat: Infinity,
           ease: "easeInOut",
         }}
         className="
           pointer-events-none
           absolute
-          right-[7%]
-          top-[15%]
-          hidden
-          h-20
-          w-20
+          -bottom-32
+          -right-32
+          h-72
+          w-72
           rounded-full
-          border
-          border-chakrin-secondary/20
-          md:block
+          bg-chakrin-secondary/15
+          blur-3xl
+          sm:h-96
+          sm:w-96
         "
       />
 
+      {/* Small Floating Dots */}
 
       <motion.div
         animate={{
-          x: [0, 20, 0],
           y: [0, -15, 0],
-          opacity: [0.3, 0.8, 0.3],
+          opacity: [0.3, 0.7, 0.3],
         }}
         transition={{
-          duration: 6,
+          duration: 4,
           repeat: Infinity,
           ease: "easeInOut",
         }}
         className="
           pointer-events-none
           absolute
-          bottom-[20%]
           left-[8%]
-          h-3
-          w-3
+          top-[25%]
+          h-2
+          w-2
           rounded-full
           bg-chakrin-primary/40
         "
       />
 
-
       <motion.div
         animate={{
-          x: [0, -20, 0],
           y: [0, 15, 0],
-          opacity: [0.3, 0.8, 0.3],
+          opacity: [0.3, 0.7, 0.3],
         }}
         transition={{
-          duration: 7,
+          duration: 4.5,
           repeat: Infinity,
           ease: "easeInOut",
         }}
         className="
           pointer-events-none
           absolute
-          bottom-[25%]
           right-[8%]
-          h-4
-          w-4
+          top-[20%]
+          h-3
+          w-3
           rounded-full
-          bg-chakrin-secondary/50
+          bg-chakrin-secondary/40
         "
       />
-
 
       {/* =====================================================
           MAIN CONTENT
@@ -305,7 +165,6 @@ const WorkingProcess = () => {
           lg:px-8
         "
       >
-
         {/* =====================================================
             HEADING
         ====================================================== */}
@@ -313,7 +172,7 @@ const WorkingProcess = () => {
         <motion.div
           initial={{
             opacity: 0,
-            y: 40,
+            y: 25,
           }}
           whileInView={{
             opacity: 1,
@@ -321,11 +180,11 @@ const WorkingProcess = () => {
           }}
           viewport={{
             once: true,
-            amount: 0.2,
+            amount: 0.15,
           }}
           transition={{
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
+            duration: 0.45,
+            ease: "easeOut",
           }}
           className="
             mx-auto
@@ -336,13 +195,12 @@ const WorkingProcess = () => {
             lg:mb-16
           "
         >
-
           {/* Label */}
 
           <motion.span
             initial={{
               opacity: 0,
-              scale: 0.9,
+              scale: 0.95,
             }}
             whileInView={{
               opacity: 1,
@@ -352,7 +210,7 @@ const WorkingProcess = () => {
               once: true,
             }}
             transition={{
-              duration: 0.6,
+              duration: 0.35,
             }}
             className="
               inline-flex
@@ -374,7 +232,6 @@ const WorkingProcess = () => {
           >
             Working Process
           </motion.span>
-
 
           {/* Heading */}
 
@@ -406,24 +263,20 @@ const WorkingProcess = () => {
             </span>
           </h2>
 
-
-          {/* Animated Accent */}
+          {/* Accent */}
 
           <motion.div
             initial={{
               width: 0,
-              opacity: 0,
             }}
             whileInView={{
               width: "70px",
-              opacity: 1,
             }}
             viewport={{
               once: true,
             }}
             transition={{
-              duration: 0.7,
-              delay: 0.3,
+              duration: 0.4,
             }}
             className="
               mx-auto
@@ -435,7 +288,6 @@ const WorkingProcess = () => {
               to-chakrin-secondary
             "
           />
-
 
           {/* Description */}
 
@@ -453,140 +305,89 @@ const WorkingProcess = () => {
             Our streamlined workflow ensures quality, precision and timely
             delivery from concept to finished textile products.
           </p>
-
         </motion.div>
-
 
         {/* =====================================================
             PROCESS CARDS
         ====================================================== */}
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{
-            once: true,
-            amount: 0.15,
-          }}
+        <div
           className="
             grid
-            gap-6
+            gap-5
             sm:grid-cols-2
-            lg:gap-7
+            sm:gap-6
             xl:grid-cols-4
+            xl:gap-7
           "
         >
-
           {process.map((step, index) => (
-
             <motion.div
               key={step.id}
-
               initial={{
                 opacity: 0,
-                x:
-                  index % 2 === 0
-                    ? -60
-                    : 60,
                 y: 25,
               }}
-
               whileInView={{
                 opacity: 1,
-                x: 0,
                 y: 0,
               }}
-
               viewport={{
                 once: true,
-                amount: 0.2,
+                amount: 0.1,
               }}
-
               transition={{
-                duration: 0.75,
-                delay: index * 0.12,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.45,
+                delay: index * 0.07,
+                ease: "easeOut",
               }}
-
               whileHover={{
-                y: -10,
+                y: -6,
               }}
-
               className="
                 group
                 relative
-                overflow-visible
+                overflow-hidden
                 rounded-3xl
                 border
                 border-chakrin-border
-                bg-white/90
+                bg-white
                 p-6
-                shadow-[0_10px_35px_rgba(166,61,130,0.06)]
-                backdrop-blur-sm
+                shadow-[0_8px_25px_rgba(166,61,130,0.06)]
                 transition-all
-                duration-500
+                duration-300
                 hover:border-chakrin-primary/40
-                hover:bg-white
-                hover:shadow-[0_25px_55px_rgba(166,61,130,0.15)]
+                hover:shadow-[0_18px_40px_rgba(166,61,130,0.13)]
                 sm:p-7
               "
             >
-
               {/* =================================================
-                  CARD TOP SHINE
+                  TOP ACCENT
               ================================================== */}
 
-              <motion.div
-                animate={{
-                  x: ["-150%", "150%"],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  repeatDelay: 4,
-                  ease: "linear",
-                }}
+              <div
                 className="
-                  pointer-events-none
                   absolute
-                  left-0
+                  left-6
+                  right-6
                   top-0
-                  z-20
-                  h-full
-                  w-1/3
-                  -skew-x-12
-                  rounded-3xl
+                  h-[3px]
+                  rounded-full
                   bg-gradient-to-r
-                  from-transparent
-                  via-white/30
-                  to-transparent
-                  opacity-0
+                  from-chakrin-primary
+                  to-chakrin-secondary
+                  opacity-60
+                  transition-opacity
+                  duration-300
                   group-hover:opacity-100
                 "
               />
-
 
               {/* =================================================
                   NUMBER
               ================================================== */}
 
-              <motion.span
-                initial={{
-                  opacity: 0,
-                  scale: 0.8,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  scale: 1,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.12 + 0.2,
-                }}
+              <span
                 className="
                   absolute
                   right-5
@@ -595,16 +396,15 @@ const WorkingProcess = () => {
                   font-extrabold
                   text-chakrin-secondary-light
                   transition-all
-                  duration-500
-                  group-hover:scale-110
+                  duration-300
+                  group-hover:scale-105
                   group-hover:text-chakrin-border
                   sm:right-6
                   sm:top-5
                 "
               >
                 {step.id}
-              </motion.span>
-
+              </span>
 
               {/* =================================================
                   ICON
@@ -612,11 +412,11 @@ const WorkingProcess = () => {
 
               <motion.div
                 whileHover={{
-                  rotate: [0, -8, 8, 0],
-                  scale: 1.1,
+                  rotate: 5,
+                  scale: 1.08,
                 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.25,
                 }}
                 className="
                   relative
@@ -634,10 +434,6 @@ const WorkingProcess = () => {
                   text-white
                   shadow-lg
                   shadow-chakrin-primary/20
-                  transition-all
-                  duration-500
-                  group-hover:shadow-xl
-                  group-hover:shadow-chakrin-primary/30
                   sm:h-16
                   sm:w-16
                   sm:text-2xl
@@ -645,7 +441,6 @@ const WorkingProcess = () => {
               >
                 {step.icon}
               </motion.div>
-
 
               {/* =================================================
                   TITLE
@@ -658,7 +453,7 @@ const WorkingProcess = () => {
                   font-bold
                   text-chakrin-heading
                   transition-colors
-                  duration-300
+                  duration-200
                   group-hover:text-chakrin-primary
                   sm:text-2xl
                 "
@@ -666,28 +461,24 @@ const WorkingProcess = () => {
                 {step.title}
               </h3>
 
-
               {/* =================================================
-                  ANIMATED LINE
+                  LINE
               ================================================== */}
 
-              <motion.div
-                initial={{
-                  width: "55px",
-                }}
-                whileHover={{
-                  width: "100%",
-                }}
+              <div
                 className="
                   mt-5
                   h-[3px]
+                  w-14
                   rounded-full
                   bg-gradient-to-r
                   from-chakrin-primary
                   to-chakrin-secondary
+                  transition-all
+                  duration-300
+                  group-hover:w-full
                 "
               />
-
 
               {/* =================================================
                   DESCRIPTION
@@ -705,38 +496,26 @@ const WorkingProcess = () => {
                 {step.desc}
               </p>
 
-
               {/* =================================================
-                  BOTTOM GLOW
+                  SOFT CARD GLOW
               ================================================== */}
 
-              <motion.div
-                animate={{
-                  scale: [1, 1.15, 1],
-                  opacity: [0.3, 0.55, 0.3],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: index * 0.5,
-                }}
+              <div
                 className="
                   pointer-events-none
                   absolute
-                  -bottom-10
-                  -right-10
+                  -bottom-12
+                  -right-12
                   h-24
                   w-24
                   rounded-full
                   bg-chakrin-secondary/10
                   blur-2xl
-                  transition-all
+                  transition-transform
                   duration-500
                   group-hover:scale-150
                 "
               />
-
 
               {/* =================================================
                   CONNECTOR - DESKTOP
@@ -746,7 +525,7 @@ const WorkingProcess = () => {
                 <div
                   className="
                     absolute
-                    -right-[28px]
+                    -right-7
                     top-[70px]
                     hidden
                     h-[2px]
@@ -756,16 +535,14 @@ const WorkingProcess = () => {
                     xl:block
                   "
                 >
-
                   <motion.div
                     animate={{
                       x: ["-100%", "100%"],
                     }}
                     transition={{
-                      duration: 2,
+                      duration: 1.2,
                       repeat: Infinity,
                       ease: "linear",
-                      delay: index * 0.3,
                     }}
                     className="
                       h-full
@@ -775,18 +552,12 @@ const WorkingProcess = () => {
                       to-chakrin-secondary
                     "
                   />
-
                 </div>
               )}
-
             </motion.div>
-
           ))}
-
-        </motion.div>
-
+        </div>
       </div>
-
     </section>
   );
 };
