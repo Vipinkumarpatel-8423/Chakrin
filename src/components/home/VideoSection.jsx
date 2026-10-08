@@ -8,9 +8,9 @@ const VideoSection = () => {
 
       {/* Video */}
       <motion.video
-        initial={{ scale: 1.03 }}
+        initial={{ scale: 1.01 }}
         whileInView={{ scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true }}
         autoPlay
         muted
@@ -18,20 +18,20 @@ const VideoSection = () => {
         playsInline
         preload="metadata"
         poster={poster}
+        playbackRate={1}
         className="
+          block
           w-full
-          h-[280px]
-          sm:h-[380px]
-          md:h-[500px]
-          lg:h-[650px]
-          object-cover
+          h-auto
+          max-h-[650px]
+          object-contain
         "
       >
         <source src={video} type="video/mp4" />
       </motion.video>
 
       {/* Dark Overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-black/35" />
+      <div className="pointer-events-none absolute inset-0 bg-black/20" />
 
     </section>
   );
