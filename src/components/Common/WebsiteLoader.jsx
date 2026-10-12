@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../../assets/logo/logo.png";
+import logo from "../../assets/logo/Logo.png";
 
 const WebsiteLoader = () => {
   const [visible, setVisible] = useState(true);
