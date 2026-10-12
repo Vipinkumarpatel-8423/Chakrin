@@ -801,8 +801,6 @@ const Hero = () => {
       {/* Slider Controls */}
       <div
         className="
-         
-
           absolute bottom-7 left-1/2 -translate-x-1/2 z-20
     flex items-center gap-3
     sm:bottom-8 sm:left-auto sm:right-70 sm:translate-x-0
